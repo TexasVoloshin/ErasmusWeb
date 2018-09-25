@@ -1,14 +1,18 @@
+DROP DATABASE IF EXISTS `Erasmus`;
 CREATE DATABASE `Erasmus` /*!40100 DEFAULT CHARACTER SET utf8 */;
+DROP USER IF EXISTS 'user1'@'localhost';
+CREATE USER 'user1'@'localhost' identified by 'user1_pass'; -- Creates the user
+GRANT ALL ON Erasmus.* to 'user1'@'localhost'; -- Gives all the privileges to the new user on the newly created database
 
-DROP TABLE IF EXISTS `role`;
-CREATE TABLE  `role` (
+DROP TABLE IF EXISTS `Erasmus`.`role`;
+CREATE TABLE  `Erasmus`.`role` (
   `role_id` int(11) NOT NULL auto_increment,
   `role` varchar(255) default NULL,
   PRIMARY KEY  (`role_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE  `user` (
+DROP TABLE IF EXISTS `Erasmus`.`user`;
+CREATE TABLE  `Erasmus`.`user` (
   `id` int(11) NOT NULL auto_increment,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
@@ -18,18 +22,18 @@ CREATE TABLE  `user` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `user_role`;
-CREATE TABLE  `user_role` (
+DROP TABLE IF EXISTS `Erasmus`.`user_role`;
+CREATE TABLE  `Erasmus`.`user_role` (
   `user_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   PRIMARY KEY  (`user_id`,`role_id`),
   KEY `user_role_key` (`role_id`),
-  CONSTRAINT `user_userrole` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  CONSTRAINT `role_userrole` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`)
+  CONSTRAINT `user_userrole` FOREIGN KEY (`user_id`) REFERENCES `Erasmus`.`user` (`id`),
+  CONSTRAINT `role_userrole` FOREIGN KEY (`role_id`) REFERENCES `Erasmus`.`role` (`role_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `persistent_logins`;
-CREATE TABLE  `persistent_logins` (
+DROP TABLE IF EXISTS `Erasmus`.`persistent_logins`;
+CREATE TABLE  `Erasmus`.`persistent_logins` (
   `username` varchar(64) NOT NULL,
   `series` varchar(64) NOT NULL,
   `token` varchar(64) NOT NULL,
@@ -37,4 +41,4 @@ CREATE TABLE  `persistent_logins` (
   PRIMARY KEY  (`series`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `role` VALUES (1,'ADMIN');
+INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
