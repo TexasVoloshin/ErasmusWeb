@@ -1,34 +1,71 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
- xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" 
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
 
 <head>
- <title>Sign in</title>
- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <link rel="stylesheet" type="text/css" href="./css/style_login.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+   
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">-->
+
 </head>
 
 <body>
- <div class="container">
-  <div class="alert alert-danger" role="alert" th:if="${param.error}">
-   The email or password is incorrect!
-  </div>
-        <form th:action="@{/login}" method="post" >
-          <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
-    <label for="inputEmail" class="sr-only">Email</label>
-       <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
-       <label for="inputPassword" class="sr-only">Password</label>
-       <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-       <div class="checkbox mb-3">
-         <label>
-           <input type="checkbox" name="remember-me" /> Remember me
-         </label>
+    <header>
+       <div class="logo">
+         
+                <img src="/images/ESN-white.png"  alt="logo">
+          
+       </div> 
+       <div class="menu">
+           <ul>
+                <li><a href="../index.html" target="_blank">HOME</a></li>
+                <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
+               <li><a href="../contact/contact.html">CONTACT</a></li>
+               <li><a href="login.html">LOGIN</a></li>
+            </ul>
        </div>
-       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-       <div class="margin-top20 text-center"> Don't have an account? <a th:href="@{/signup}">Create an account</a></div>
-  </form>
-    </div>
+       <div class="clear"></div>
+    </header>
+<main>
+    <section class="hero">
+            <div class="container">
+                    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+                     The email or password is incorrect!
+                    </div>
+                          <form th:action="@{/login}" method="post" >
+                            <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+                      <label for="inputEmail" class="sr-only">Email</label>
+                         <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
+                         <label for="inputPassword" class="sr-only">Password</label>
+                         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                         <div class="checkbox mb-3">
+                           <label>
+                             <input type="checkbox" name="remember-me" /> Remember me
+                           </label>
+                         </div>
+                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                         <div class="margin-top20 text-center"> Don't have an account? <a th:href="@{/signup}">Create an Erasmus account</a> or <a th:href="@{/signupMentor}">Create Mentor account</a></div>
+                    </form>
+                      </div>
+    
+    
+        <div class="clear"></div>
+    </section>
+</main>
+    <footer>
+        <p>© 2018 Copyright. Karolina Wołoszyn</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

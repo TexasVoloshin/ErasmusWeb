@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl"
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Erasmus-Mentor System</title>
+    <link rel="stylesheet" type="text/css" href="contact.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+   
+</head>
+
+<body>
+    <header>
+       <div class="logo">
+         
+                <img src="/images/ESN-white.png"  alt="logo">
+            
+    
+       </div> 
+       <div class="menu">
+           <ul>
+               <li><a href="../index_home.html" target="_blank">HOME</a></li>
+               <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
+               <li><a href="#">CONTACT</a></li>
+               <li><a href="../user/login.html">LOGIN</a></li>
+            </ul>
+       </div>
+     
+    </header>
+<main>
+    <section class="hero">
+            <div class="container">  
+                    <form id="contact" action="action="https://formspree.io/kina43@gmail.com"" method="post">
+                      <h3>ESN Mentor Programme Contact Form</h3>
+                      <h4>Contact us for custom quote</h4>
+                      <fieldset>
+                        <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+                      </fieldset>
+                      <fieldset>
+                        <input placeholder="Your Email Address" type="email" class ='email' tabindex="2" required>
+                      </fieldset>
+                      <fieldset>
+                        <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+                      </fieldset>
+                      <fieldset>
+                        <textarea class= "message" placeholder="Type your message here...." tabindex="5" required></textarea>
+                      </fieldset>
+                      <fieldset>
+                        <button class= "submit" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                      </fieldset>
+                      <div class ='status'>
+                      </div>
+                      <p class="copyright">Designed by <a href="https://agh.esn.pl" target="_blank" title="ESN AGH">ESN AGH</a></p>
+                    </form>
+                  </div>
+    </section>
+  
+</main>
+    <footer>
+        <p>© 2018 Copyright. Karolina Wołoszyn</p>
+    </footer>
+
+
+
+
+</body>
+</html>

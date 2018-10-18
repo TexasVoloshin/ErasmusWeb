@@ -1,0 +1,197 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-family: 'Barlow', sans-serif;
+    font-size:40px;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1000px ;
+    margin: 0 auto;
+}
+ header{
+     width: 100%;
+     height: 90px ;
+     background-color: #0099FF ;
+ }
+
+ .logo{
+     float: left;
+     margin-left:10px ;
+ }
+ .menu{
+     float: right;
+ }
+ .clear{
+     clear: both;
+ }
+ ul{
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+
+ }
+ ul li{
+     display: inline-block;
+ }
+ ul li a{
+     text-decoration: none;
+     color:white;
+     text-transform: uppercase;
+     font-size: 20px;
+     text-align: center;
+     display: inline-block;
+     line-height: 90px;
+     padding: 0 20px;
+
+ }
+ ul li a:hover{
+     background-color: #00BFFF;
+ }
+ ul li2 a{
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-style: bold;
+    text-align: center;
+    display: inline-block;
+    line-height: 500px;
+    padding: 0 45px;
+
+}
+ul li2 a:hover{
+    opacity: 0.95;
+    background-color:#33ccff;
+    text-emphasis-color:blue;
+}
+ .hero{
+    float: center;
+     justify-content: space-around;
+     width: 100%;
+     height: 500px;
+     background-image: url("/images/tlo2.jpg");
+     background-size: cover;
+     background-position: center;
+     overflow: hidden;
+     text-align: center;
+     align-items:center;   
+ }
+ .item{flex-shrink: 0;
+    flex-grow: 1;
+ }
+ 
+ /* .hero-slogan{
+     /* margin: 20vh auto; */
+    /* background: rgba(255, 255, 255, 0.5);
+    max-width: 800px;
+    align-items: center; }*/
+
+ .compass{
+    float: center;
+    align-items: center;
+    opacity: 0.8;
+    align-self:center;
+    justify-content: center;
+   
+
+ }
+
+ /* }
+ .hero-main-text{
+     font-size: 50px;
+     color: steelblue;
+     margin: 0;
+     padding: 20px;
+     line-height: 0;
+
+ }
+ .hero-text{
+    font-size:40px;
+    color: steelblue;
+   padding: 20px;
+    margin: 0; */
+ }
+.hero-button{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border: none;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    background: gold;
+    color: #000;
+
+ }
+ .hero-button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: lightblue;
+    
+    
+     /* border-radius:20px;
+     cursor: pointer; */
+ }
+ .gallery{
+     display: flex;
+     margin: 0;
+     text-align: center;
+     background-color: #0099FF;
+     padding-bottom:50px ; 
+    
+ }
+ .gallery-text{
+    font-family: 'Barlow', sans-serif;
+    color: white;
+    margin: 0;
+    padding:50px;
+    font-size: 30px;
+
+
+ 
+ 
+ }
+ .gallery-img img{
+    font-family: 'Barlow', sans-serif;
+    color: #white;
+     object-fit: cover;
+     float: left;
+     width: 25%;
+     max-height: 150px;
+     border-radius:20px;
+     padding: 10px;
+     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+ }
+ 
+ .gallery-img img:hover{
+     opacity: 0.8;
+     cursor: pointer;
+ }
+ footer{
+     background-color:#0099FF;
+     text-align: center;
+
+ }
+footer p{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}

@@ -6,5 +6,7 @@ public interface UserService {
   
  public User findUserByEmail(String email);
  
- public void saveUser(User user);
+ public void saveErasmus(User user);
+ public void saveMentor(User user);
+ 
 }

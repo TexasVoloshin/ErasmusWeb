@@ -27,14 +27,21 @@ public class UserServiceImpl implements UserService {
  public User findUserByEmail(String email) {
   return userRepository.findByEmail(email);
  }
-
+//zrobic jedna metodesave
  @Override
- public void saveUser(User user) {
+ public void saveErasmus(User user) {
   user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
   user.setActive(1);
-  Role userRole = roleRespository.findByRole("ADMIN");
+  Role userRole = roleRespository.findByRole("ERASMUS");
   user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
   userRepository.save(user);
  }
-
+ @Override
+ public void saveMentor(User user) {
+  user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+  user.setActive(1);
+  Role userRole = roleRespository.findByRole("MENTOR");
+  user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
+  userRepository.save(user);
+ }
 }

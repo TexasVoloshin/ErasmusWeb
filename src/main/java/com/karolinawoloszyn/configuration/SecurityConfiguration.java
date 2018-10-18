@@ -39,10 +39,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
  @Override
  protected void configure(HttpSecurity http) throws Exception{
   http.authorizeRequests()
+  
    .antMatchers("/").permitAll()
+   .antMatchers("/start").permitAll()
    .antMatchers("/login").permitAll()
    .antMatchers("/signup").permitAll()
+   .antMatchers("/css/**").permitAll()
+   .antMatchers("/foto/**").permitAll()  
+   .antMatchers("/images/**").permitAll()  
+   .antMatchers("/signup_erasmus").permitAll()
+   .antMatchers("/signup_mentor").permitAll()
+   .antMatchers("/signupMentor").permitAll()
    .antMatchers("/home/**").hasAuthority("ADMIN").anyRequest()
+
    .authenticated().and().csrf().disable()
    .formLogin().loginPage("/login").failureUrl("/login?error=true")
    .defaultSuccessUrl("/home/home")

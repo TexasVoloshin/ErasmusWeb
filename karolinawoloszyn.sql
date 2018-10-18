@@ -41,4 +41,23 @@ CREATE TABLE  `Erasmus`.`persistent_logins` (
   PRIMARY KEY  (`series`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+DROP TABLE IF EXISTS `Erasmus`.`erasmusinfo`;
+CREATE TABLE `Erasmus`.`erasmusinfo` (
+  `idErasmusInfo` INT NOT NULL,
+  `ErasmusName` VARCHAR(45) NULL,
+  `ErasmusSurname` VARCHAR(45) NULL,
+  `ErasmusGender` VARCHAR(45) NULL,
+  `ErasmusEmail` VARCHAR(45) NULL,
+  `ErasmusCountry` VARCHAR(45) NULL,
+  `ErasmusUni` VARCHAR(45) NULL,
+  `ErasmusStudies` VARCHAR(45) NULL,
+  `ErasmusFacultyAGH` VARCHAR(45) NULL,
+  `ErasmusSupervisor` VARCHAR(45) NULL,
+  `Dormitory` CHAR(3) NULL,
+  PRIMARY KEY (`idErasmusInfo`))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8
+COMMENT = 'Table contains personal information about Eramsus Student ';
+
+
 INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
