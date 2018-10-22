@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html 
-xmlns="http://www.w3.org/1999/xhtml" 
-xmlns:th="http://www.thymeleaf.org">
-<head lang="pl">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Erasmus-Mentor System</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
-   
+    <!-- <script src="jquery/arrowspin.js"></script> -->
 </head>
 
 <body>
     <header>
        <div class="logo">
          
-                <img src="/images/ESN-white.png"  alt="logo">
+                <img src="photo/ESN-white.png"  alt="logo">
           
        </div> 
        <div class="menu">
            <ul>
-           
-            <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
-               <li><a th:href="@{/contact}">CONTACT</a></li>
-               <li><a th:href="@{user/login}">LOGIN</a></li>
+               <li><a href="#" target="_blank">HOME</a></li>
+               <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
+               <li><a href="#">CONTACT</a></li>
+               <li><a href="#">LOGIN</a></li>
             </ul>
        </div>
        <div class="clear"></div>
@@ -34,8 +31,8 @@ xmlns:th="http://www.thymeleaf.org">
     <section class="hero">
 
             <ul>
-                  <li2><a th:href="@{/signup}" target="_blank">   SIGN IN AS ERASMUS  </a></li>
-                    <li2><a th:href="@{/signupMentor}" target="_blank">   SIGN IN AS MENTOR   </a></li>
+                    <li2><a href="#" target="_blank">   SIGN IN AS ERASMUS  </a></li>
+                    <li2><a href="#" target="_blank">   SIGN IN AS MENTOR   </a></li>
             </ul>
 
   
@@ -50,10 +47,10 @@ xmlns:th="http://www.thymeleaf.org">
                </p>   
             </div>
             <div class="gallery-img">
-                    <img src="/images/5.jpg">
-                    <img src="/images/6.jpg">
-                    <img src="/images/7.jpg">
-                    <img src="/images/8.jpg">
+                    <img src="photo/5.jpg">
+                    <img src="photo/6.jpg">
+                    <img src="photo/7.jpg">
+                    <img src="photo/8.jpg">
                 </div>
         </div>
         <div class="clear"></div>
@@ -62,6 +59,7 @@ xmlns:th="http://www.thymeleaf.org">
     <footer>
         <p>© 2018 Copyright. Karolina Wołoszyn</p>
     </footer>
+    <!-- <script scr=jquery/jquery-3.3.1.min.js></script> -->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

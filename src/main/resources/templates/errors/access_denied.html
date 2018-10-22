@@ -7,14 +7,12 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <title>Access denied</title>
- <link rel="stylesheet" type="text/css" href="style_error.css">
+ <link rel="stylesheet" type="text/css" href="/css/style_error.css">
  <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
- <!-- <script src="jquery/arrowspin.js"></script> -->
 
  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
- <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">-->
 
 </head>
 
@@ -22,15 +20,15 @@
         <header>
            <div class="logo">
              
-                    <img src="../photo/ESN-white.png"  alt="logo">
+                    <img src="/images/ESN-white.png"  alt="logo">
               
            </div> 
            <div class="menu">
                <ul>
-                   <li><a href="../home_index.html" target="_blank">HOME</a></li>
-                   <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
-                   <li><a href="../contact/contact.html">CONTACT</a></li>
-                   <li><a href="../user/login.html">LOG IN</a></li>
+                <li><a th:href="@{/}" target="_blank">HOME</a></li>
+                <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
+               <li><a th:href="@{/contact}">CONTACT</a></li>
+               <li><a th:href="@{login}">LOGIN</a></li>
                 </ul>
            </div>
            <div class="clear"></div>

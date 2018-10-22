@@ -1,0 +1,14 @@
+CREATE TABLE `erasmus`.`erasmusinfo` (
+  `idErasmusInfo` INT NOT NULL,
+  `ErasmusNamel` VARCHAR(45) NULL,
+  `ErasmusSurname` VARCHAR(45) NULL,
+  `ErasmusGender` VARCHAR(45) NULL,
+  `ErasmusEmail` VARCHAR(45) NULL,
+  `ErasmusCountry` VARCHAR(45) NULL,
+  `ErasmusUni` VARCHAR(45) NULL,
+  `ErasmusStudies` VARCHAR(45) NULL,
+  `ErasmusFacultyAGH` VARCHAR(45) NULL,
+  `ErasmusSupervisor` VARCHAR(45) NULL,
+  `Dormitory` CHAR(3) NULL,
+  PRIMARY KEY (`idErasmusInfo`))
+COMMENT = 'Table contains personal information about Eramsus Student ';

@@ -29,10 +29,10 @@ xmlns:th="http://www.thymeleaf.org">
        </div> 
        <div class="menu">
            <ul>
-                <li><a href="../index.html" target="_blank">HOME</a></li>
+           <li><a th:href="@{/index}" target="_blank">HOME</a></li>
                 <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
-               <li><a href="../contact/contact.html">CONTACT</a></li>
-               <li><a href="login.html">LOGIN</a></li>
+               <li><a th:href="@{/contact}">CONTACT</a></li>
+               <li><a th:href="@{login}">LOGIN</a></li>
             </ul>
        </div>
        <div class="clear"></div>

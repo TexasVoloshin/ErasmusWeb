@@ -83,7 +83,7 @@ public class UserController {
    model.setViewName("user/signup");
   } else {
    userService.saveMentor(user);
-   model.addObject("msg", "User has been registered successfully!");
+   model.addObject("msg", "User has been registered successfully! Now you can login.");
    model.addObject("user", new User());
    model.setViewName("user/signup");
   }
@@ -107,5 +107,23 @@ public class UserController {
   ModelAndView model = new ModelAndView();
   model.setViewName("errors/access_denied");
   return model;
+ }
+ @RequestMapping(value= {"/contact"}, method=RequestMethod.GET)
+ public ModelAndView contactPage() {
+  ModelAndView model = new ModelAndView();
+  model.setViewName("contact/contact");
+  return model;
+ }
+  @RequestMapping(value= {"/application_form"}, method=RequestMethod.GET)
+  public ModelAndView formPage() {
+   ModelAndView model = new ModelAndView();
+   model.setViewName("form/form_Erasmus");
+   return model;
+ }
+  @RequestMapping(value= {"/assign_erasmus"}, method=RequestMethod.GET)
+  public ModelAndView assignForm() {
+   ModelAndView model = new ModelAndView();
+   model.setViewName("form/form_Mentor");
+   return model;
  }
 }

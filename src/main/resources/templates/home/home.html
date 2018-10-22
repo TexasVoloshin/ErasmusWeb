@@ -7,7 +7,7 @@ xmlns:th="http://www.thymeleaf.org">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="style_home.css">
+    <link rel="stylesheet" type="text/css" href="/css/style_home.css">
     <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
     <!-- <script src="jquery/arrowspin.js"></script> -->
 
@@ -22,15 +22,16 @@ xmlns:th="http://www.thymeleaf.org">
     <header>
        <div class="logo">
          
-                <img src="ESN-white.png"  alt="logo">
+                <img src="/images/ESN-white.png"  alt="logo">
           
        </div> 
        <div class="menu">
            <ul>
-                <li><a href="../index_home.html" target="_blank">HOME</a></li>
+                       <li><a href="@{/index}" target="_blank">HOME</a></li>
                 <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
-               <li><a href="../contact/contact.html">CONTACT</a></li>
-               <li><a href="../index_home.html">LOGOUT</a></li>
+               <li><a th:href="@{/contact}">CONTACT</a></li>
+               <li><a th:href="@{/logout}">LOGOUT</a></li>
+               
             </ul>
        </div>
        <div class="clear"></div>
@@ -38,10 +39,16 @@ xmlns:th="http://www.thymeleaf.org">
 <main>
     <section class="hero">
             <div class="container">
-                    <h2>Hi <span th:utext="${userName}"></span>, this is the home page.</h2>
-                    <a th:href="@{/logout}">Logout</a>
+                    <h2>Hi <span th:utext="${userName}"></span>! Let's the adventure begin!</h2>
+                    <a th:href="@{/logout}">LOGOUT</a>
                    </div>
-           
+            
+                   <div sec:authorize="hasAuthority('ERAMSUS')">       
+    <a th:href="@{/application_form}">APPLY FOR MENTOR</a>
+</div>
+<div sec:authorize="hasAuthority('MENTOR')">
+ <a th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
+</div>
            
   
     </section>
