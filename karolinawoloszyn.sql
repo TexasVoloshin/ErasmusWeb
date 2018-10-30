@@ -61,3 +61,5 @@ COMMENT = 'Table contains personal information about Eramsus Student ';
 
 
 INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
+INSERT INTO `Erasmus`.`role` VALUES (2,'ERASMUS');
+INSERT INTO `Erasmus`.`role` VALUES (3,'MENTOR');

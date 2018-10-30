@@ -31,3 +31,4 @@ mvnw.cmd
 src/json/
 
 src/main/resources/static/built/
+/.metadata/

@@ -1,5 +1,7 @@
 package com.karolinawoloszyn.model;
 import java.util.Set;
+import javax.persistence.NamedQuery;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +15,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "user")
+@NamedQuery(name = "User.findAllOrderedByNameDescending", 
+query = "SELECT u  FROM User u ORDER BY u.lastname DESC")
 public class User {
  
  @Id

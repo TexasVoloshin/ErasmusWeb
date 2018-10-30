@@ -1,4 +1,7 @@
 package com.karolinawoloszyn.controller;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -126,4 +131,22 @@ public class UserController {
    model.setViewName("form/form_Mentor");
    return model;
  }
+  @GetMapping("/showUserList")
+  public String findAllOrderedByNameDescending(Model model) {
+      
+      List<User> users = (List<User>) userService.findAllOrderedByNameDescending();
+      
+      model.addAttribute("users", users);
+      
+      return "userDetails";
+  }
+  @RequestMapping(value= {"/admin"}, method=RequestMethod.GET)
+  public ModelAndView adminView() {
+   ModelAndView modelAndView = new ModelAndView();
+   List<User> users = (List<User>) userService.findAllOrderedByNameDescending();
+   modelAndView.addObject("users", users);
+   modelAndView.setViewName("home/admin");
+   return modelAndView;
+
+  }
 }

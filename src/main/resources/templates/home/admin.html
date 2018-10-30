@@ -9,16 +9,15 @@ xmlns:th="http://www.thymeleaf.org">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="/css/style_home.css">
     <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
-    <!-- <script src="jquery/arrowspin.js"></script> -->
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">-->
 
 </head>
 
 <body>
+
     <header>
        <div class="logo">
          
@@ -39,41 +38,42 @@ xmlns:th="http://www.thymeleaf.org">
 <main>
     <section class="hero">
             <div class="container">
-                    <h2>Hi <span th:utext="${userName}"></span>! Let's the adventure begin!</h2>
+                    <h2>Hi Admin:  <span th:utext="${userName}"></span>! You are Program Coordinator!</h2>
                     <a th:href="@{/logout}">LOGOUT</a>
                    </div>
-            
-                   <div sec:authorize="hasAuthority('ERAMSUS')">       
-    <a th:href="@{/application_form}">APPLY FOR MENTOR</a>
-</div>
-<div sec:authorize="hasAuthority('MENTOR')">
- <a th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
-</div>
-            <div>
-                              <a >All user details</a>
+                     <div>
+                              <a >All registered users</a>
                               
-<table border="1">
-<thead>
-    <tr>
-       <th>Firstname</th>
-        <th>Lastname</th>
-         <th>Email</th>
-    </tr>
-    </thead>
-     <tbody>
-                <tr th:each="user:${user}">
-                    <td th:text="${userName}"></td>
-                    <td th:text="${user.email}"></td>
+ <table>
+            <tr>
+                <th>Id</th>  
+                <th>Firstame</th>
+                <th>Lastname</th>  
+                <th>Email</th>
+                
+            </tr>        
+
+            <#list users as user>
+                <tr>
+                    <td>${user.id}</td> 
+                    <td>${user.firstame}</td> 
+                    <td>${user.lastname}</td>
+                                        <td>${user.email}</td>
+                    
+                    
                 </tr>
-                </tbody>
-</table>
+            </#list>        
+        </table>  
            </div>
-    
-    
-        <div class="clear"></div>  
+  
+
+            
+                  
   
     </section>
     
+    
+        <div class="clear"></div>
     </section>
 </main>
     <footer>

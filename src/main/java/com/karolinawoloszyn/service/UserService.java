@@ -1,5 +1,8 @@
 package com.karolinawoloszyn.service;
 
+import java.util.Collection;
+import java.util.List;
+
 import com.karolinawoloszyn.model.User;
 
 public interface UserService {
@@ -8,5 +11,8 @@ public interface UserService {
  
  public void saveErasmus(User user);
  public void saveMentor(User user);
+ public List<User> findAllOrderedByNameDescending();
+
+
  
 }
