@@ -28,6 +28,7 @@ h2{
      margin-left:10px ;
  }
  .menu{
+   font-family: 'Barlow', sans-serif;
      float: right;
  }
  .clear{
@@ -195,3 +196,32 @@ footer p{
     padding: 20px;
     text-align: center;
 }
+table{ 
+  font-family: 'Barlow', sans-serif;
+   border: 1px solid #0d03c1;
+  border-spacing: 1; 
+  border-collapse: collapse; 
+  background:white;
+  border-radius:10px;
+ /*  overflow:hidden; */
+  max-width:500px; 
+  width:100%;
+  margin:0 auto;
+  position:relative;
+ 
+ 
+  
+  *               { position:relative }
+  
+  td,th           { padding-left:4px}
+
+}
+ thead tr        { 
+    height:40px;
+    background:#0d03c1;
+    font-size:16px;
+ 
+  }
+  thead {color:white;}
+  
+ 

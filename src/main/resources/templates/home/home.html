@@ -39,7 +39,7 @@ xmlns:th="http://www.thymeleaf.org">
 <main>
     <section class="hero">
             <div class="container">
-                    <h2>Hi <span th:utext="${userName}"></span>! Let's the adventure begin!</h2>
+                    <h2>Hi <span th:utext="${userFirstname}"></span>! Let's the adventure begin!</h2>
                     <a th:href="@{/logout}">LOGOUT</a>
                    </div>
             
@@ -50,7 +50,7 @@ xmlns:th="http://www.thymeleaf.org">
  <a th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
 </div>
             <div>
-                              <a >All user details</a>
+                              <h2 >All user details</h2>
                               
 <table border="1">
 <thead>
@@ -61,9 +61,11 @@ xmlns:th="http://www.thymeleaf.org">
     </tr>
     </thead>
      <tbody>
-                <tr th:each="user:${user}">
-                    <td th:text="${userName}"></td>
-                    <td th:text="${user.email}"></td>
+               <!--  <tr th:each="user:${user}"> -->
+               
+               <td><span th:utext="${userFirstname}"></span></td>
+               <td><span th:utext="${userLastname}"></span></td>
+               <td th:text="${userEmail}"></td>
                 </tr>
                 </tbody>
 </table>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl"
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +51,7 @@
                 <label>
                   Last Name<span class="req">*</span>
                 </label>
-                <input type="text"required autocomplete="off"/>
+                <input type="text"required autocomplete="off" />
               </div>
             </div>
      
@@ -158,7 +160,7 @@
                     <input type="telephone"required autocomplete="off"/>
                   </div>
                   <div >
-                        <h4><script type= "text/javascript" src = "countries.js"></script>
+                        <h4><script type= "text/javascript"src = "/js/countries.js"></script>
                         Select Country: <span class="req">*</span> 
                          <select id="country" name ="country" style="font-size:20px;"></select> 
                         </h4>
@@ -183,7 +185,7 @@
                       </div>
 
                       <div>
-                        <h4><script type= "text/javascript" src = "faculty_agh.js"></script>
+                        <h4><script type= "text/javascript" src = "/js/faculty_agh.js"></script>
                         Select Faculty at AGH: <span class="req">*</span> 
                          <select id="faculty" name ="faculty"></select> 
                         </h4>
