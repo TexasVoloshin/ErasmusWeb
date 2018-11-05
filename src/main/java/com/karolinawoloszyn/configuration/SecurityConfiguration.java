@@ -41,11 +41,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
   http.authorizeRequests()
   
    .antMatchers("/").permitAll()
-  
-
    .antMatchers("/login").permitAll()
+
+   .antMatchers("/erasmusApplicationResult").permitAll()
    .antMatchers("/signup").permitAll()
    .antMatchers("/css/**").permitAll()
+   .antMatchers("/js/**").permitAll()
    .antMatchers("/admin").permitAll() 
    .antMatchers("/showUserList").permitAll() 
    .antMatchers("/contact/**").permitAll()  

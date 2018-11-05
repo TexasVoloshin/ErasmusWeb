@@ -121,12 +121,12 @@ public class UserController {
   model.setViewName("contact/contact");
   return model;
  }
-  @RequestMapping(value= {"/application_form"}, method=RequestMethod.GET)
+ /* @RequestMapping(value= {"/application_form"}, method=RequestMethod.GET)
   public ModelAndView formPage() {
    ModelAndView model = new ModelAndView();
    model.setViewName("form/form_Erasmus");
    return model;
- }
+ }*/
   @RequestMapping(value= {"/assign_erasmus"}, method=RequestMethod.GET)
   public ModelAndView assignForm() {
    ModelAndView model = new ModelAndView();

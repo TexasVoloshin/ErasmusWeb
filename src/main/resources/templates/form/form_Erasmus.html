@@ -37,21 +37,21 @@ xmlns:th="http://www.thymeleaf.org">
           <div id="signup">   
             <h1>Please fill up this form if you want to have Mentor</h1>
             
-            <form action="/" method="post">
+            <form role="form"th:action="@{/application_form}" th:object="${erasmusInfo}" method="post">
             
             <div class="top-row">
               <div class="field-wrap">
                 <label>
                   First Name<span class="req">*</span>
                 </label>
-                <input type="text" required autocomplete="off" />
+                <input type="text" required autocomplete="off" th:field="*{ErasmusName}"/>
               </div>
           
               <div class="field-wrap">
                 <label>
                   Last Name<span class="req">*</span>
                 </label>
-                <input type="text"required autocomplete="off" />
+                <input type="text"required autocomplete="off" th:field="*{ErasmusSurname}" />
               </div>
             </div>
      
@@ -195,13 +195,9 @@ xmlns:th="http://www.thymeleaf.org">
                         populateCountries("faculty"); // first parameter is id of country drop-down and second parameter is id of state drop-down
                         
                     </script>
-                       
-          
-
-        
 
                       
-            <button type="submit" class="button button-block"/>Submit Form</button>
+            <button type="submit" class="button button-block" />Submit Form</button>
             
             </form>
   

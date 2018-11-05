@@ -1,7 +1,7 @@
 
 package com.karolinawoloszyn.model;
 import java.util.Set;
-import javax.persistence.NamedQuery;
+
 
 
 import javax.persistence.CascadeType;
@@ -22,6 +22,44 @@ public class ErasmusInfo {
  public int getIdErasmusInfo() {
 		return idErasmusInfo;
 	}
+
+@Id
+ @GeneratedValue(strategy = GenerationType.AUTO)
+ private int idErasmusInfo;
+ 
+ @Column(name = "ErasmusEmail")
+ private String ErasmusEmail;
+ 
+ @Column(name = "ErasmusName")
+ private String ErasmusName; 
+ 
+ @Column(name = "ErasmusSurname")
+ private String ErasmusSurname;
+ 
+ @Column(name = "ErasmusGender")
+ private String ErasmusGender;
+ 
+ @Column(name = "ErasmusCountry")
+ private String ErasmusCountry;
+ 
+ @Column(name = "ErasmusUni")
+ private String ErasmusUni;
+ 
+ @Column(name = "ErasmusStudies")
+ private String ErasmusStudies;
+ 
+ @Column(name = "ErasmusFacultyAGH")
+ private String ErasmusFacultyAGH;
+ 
+ @Column(name = "ErasmusSupervisor")
+ private String ErasmusSupervisor;
+ 
+ @Column(name = "Dormitory")
+ private String Dormitory;
+ 
+ @ManyToMany(cascade=CascadeType.ALL)
+ @JoinTable(name="user_role", joinColumns=@JoinColumn(name="user_id"), inverseJoinColumns=@JoinColumn(name="role_id"))
+ private Set<Role> roles;
 
 	public void setIdErasmusInfo(int idErasmusInfo) {
 		this.idErasmusInfo = idErasmusInfo;
@@ -115,43 +153,19 @@ public class ErasmusInfo {
 		this.roles = roles;
 	}
 
-@Id
- @GeneratedValue(strategy = GenerationType.AUTO)
- private int idErasmusInfo;
- 
- @Column(name = "ErasmusEmail")
- private String ErasmusEmail;
- 
- @Column(name = "ErasmusName")
- private String ErasmusName; 
- 
- @Column(name = "ErasmusSurname")
- private String ErasmusSurname;
- 
- @Column(name = "ErasmusGender")
- private String ErasmusGender;
- 
- @Column(name = "ErasmusCountry")
- private String ErasmusCountry;
- 
- @Column(name = "ErasmusUni")
- private String ErasmusUni;
- 
- @Column(name = "ErasmusStudies")
- private String ErasmusStudies;
- 
- @Column(name = "ErasmusFacultyAGH")
- private String ErasmusFacultyAGH;
- 
- @Column(name = "ErasmusSupervisor")
- private String ErasmusSupervisor;
- 
- @Column(name = "Dormitory")
- private String Dormitory;
- 
- @ManyToMany(cascade=CascadeType.ALL)
- @JoinTable(name="user_role", joinColumns=@JoinColumn(name="user_id"), inverseJoinColumns=@JoinColumn(name="role_id"))
- private Set<Role> roles;
-
+	@Override
+	public String toString() {
+		return  String.format( "Customer[idErasmusInfo=%d, ErasmusName='%s', ErasmusSurname='%s']",
+				idErasmusInfo, ErasmusName, ErasmusSurname);
+	}
+				
+		/*		
+				"ErasmusInfo [idErasmusInfo=" + idErasmusInfo + ", ErasmusEmail=" + ErasmusEmail + ", ErasmusName="
+				+ ErasmusName + ", ErasmusSurname=" + ErasmusSurname + ", ErasmusGender=" + ErasmusGender
+				+ ", ErasmusCountry=" + ErasmusCountry + ", ErasmusUni=" + ErasmusUni + ", ErasmusStudies="
+				+ ErasmusStudies + ", ErasmusFacultyAGH=" + ErasmusFacultyAGH + ", ErasmusSupervisor="
+				+ ErasmusSupervisor + ", Dormitory=" + Dormitory + "]";
+	}
+*/
  
 }
