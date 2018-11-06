@@ -49,6 +49,7 @@ CREATE TABLE `Erasmus`.`erasmusinfo` (
   `ErasmusSurname` VARCHAR(45) NULL,
   `ErasmusGender` VARCHAR(45) NULL,
   `ErasmusEmail` VARCHAR(45) NULL,
+  `ErasmusTel` VARCHAR(45) NULL,
   `ErasmusCountry` VARCHAR(45) NULL,
   `ErasmusUni` VARCHAR(45) NULL,
   `ErasmusStudies` VARCHAR(45) NULL,
@@ -58,6 +59,22 @@ CREATE TABLE `Erasmus`.`erasmusinfo` (
   PRIMARY KEY (`idErasmusInfo`))
   ENGINE=InnoDB DEFAULT CHARSET=utf8
 COMMENT = 'Table contains personal information about Eramsus Student ';
+
+DROP TABLE IF EXISTS `Erasmus`.`mentorinfo`;
+CREATE TABLE `Erasmus`.`mentorinfo` (
+  `idMentorInfo` INT NOT NULL,
+  `MentorName` VARCHAR(45) NULL,
+  `MentorSurname` VARCHAR(45) NULL,
+  `MentorGender` VARCHAR(45) NULL,
+  `MentorEmail` VARCHAR(45) NULL,
+  `MentorTel` VARCHAR(45) NULL,
+  `MentorStudies` VARCHAR(45) NULL,
+  `MentorCountryOfErasmus` VARCHAR(45) NULL,
+  `MentorFacultyAGH` VARCHAR(45) NULL,
+  `MentorESN` CHAR(3) NULL,
+  PRIMARY KEY (`idMentorInfo`))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8
+COMMENT = 'Table contains personal information about Mentor Student ';
 
 
 INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
