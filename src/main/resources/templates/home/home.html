@@ -39,16 +39,11 @@ xmlns:th="http://www.thymeleaf.org">
 <main>
     <section class="hero">
             <div class="container">
-                    <h2>Hi <span th:utext="${userFirstname}"></span>! Let's the adventure begin!</h2>
-                    <a th:href="@{/logout}">LOGOUT</a>
-                   </div>
+                    <h2>Hi <span th:utext="${userFirstname}"></span>! Let the adventure begin!</h2>
             
-                   <div sec:authorize="hasAuthority('ERAMSUS')">       
-    <a th:href="@{/application_form}">APPLY FOR MENTOR</a>
-</div>
-<div sec:authorize="hasAuthority('MENTOR')">
- <a th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
-</div>
+            <a th:if="${userRoles.contains('ERASMUS')}" th:href="@{/application_form}">APPLY FOR MENTOR</a>
+            <a th:if="${userRoles.contains('MENTOR')}" th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
+
             <div>
                               <h2 >All user details</h2>
                               

@@ -1,7 +1,6 @@
 package com.karolinawoloszyn.model;
 import java.util.Set;
-import javax.persistence.NamedQuery;
-
+import java.util.stream.Collectors;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 @Entity
 @Table(name = "user")
@@ -97,4 +97,8 @@ public class User {
  public void setRoles(Set<Role> roles) {
   this.roles = roles;
  }
+
+public Set<String> getRoleNames() {
+	return getRoles().stream().map(Role::getRole).collect(Collectors.toSet());
+}
 }

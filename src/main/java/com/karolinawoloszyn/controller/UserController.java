@@ -105,6 +105,7 @@ public class UserController {
   model.addObject("userFirstname", user.getFirstname());
   model.addObject("userLastname", user.getLastname());
   model.addObject("userEmail", user.getEmail());
+  model.addObject("userRoles", user.getRoleNames());
   model.setViewName("home/home");
   return model;
  }
