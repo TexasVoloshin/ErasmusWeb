@@ -1,12 +1,10 @@
 package com.karolinawoloszyn.controller;
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.karolinawoloszyn.model.ErasmusInfo;
 import com.karolinawoloszyn.model.User;
+import com.karolinawoloszyn.service.ErasmusInfoService;
 import com.karolinawoloszyn.service.UserService;
  
  
@@ -21,6 +20,9 @@ import com.karolinawoloszyn.service.UserService;
 public class ErasmusInfoController {
 	 @Autowired
 	 private UserService userService;
+	 
+	 @Autowired
+	 private ErasmusInfoService erasmusInfoService;
  
     Logger log = LoggerFactory.getLogger(this.getClass());
      
@@ -59,16 +61,21 @@ public class ErasmusInfoController {
      return model;
     }
     
-  @RequestMapping(value="/application_form}", method=RequestMethod.POST)
-    public String erasmusSubmit(@ModelAttribute ErasmusInfo erasmusInfo, Model model) {
-         
-        model.addAttribute("erasmusInfo", erasmusInfo);
-        String info = String.format("Erasmus Submission: , ErasmusName ='%s', ErasmusSurname = '%s'", 
-        		 erasmusInfo.getErasmusName(), erasmusInfo.getErasmusSurname());
-        log.info(info);
-         
-        return "form/erasmusApplicationResult";
-    }
+	@RequestMapping(value = "/application_form", method = RequestMethod.POST)
+	public ModelAndView erasmusSubmit(@ModelAttribute ErasmusInfo erasmusInfo) {
+		ModelAndView model = new ModelAndView();
+
+		SecurityContext securityContext = SecurityContextHolder.getContext();
+		String email = securityContext.getAuthentication().getName();
+		
+		User user = userService.findUserByEmail(email);
+		erasmusInfo.setUser(user);
+		erasmusInfo = erasmusInfoService.saveErasmusInfo(erasmusInfo);
+
+		model.addObject("erasmusInfo", erasmusInfo);
+		model.setViewName("form/erasmusApplicationResult");
+		return model;
+	}
     
    /* @RequestMapping(value= {"/application_form"}, method=RequestMethod.POST)
     public ModelAndView ErasmusApplication(@Valid ErasmusInfo erasmusInfo, BindingResult bindingResult) {

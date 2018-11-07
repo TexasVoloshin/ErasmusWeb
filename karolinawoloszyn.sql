@@ -44,7 +44,7 @@ CREATE TABLE  `Erasmus`.`persistent_logins` (
 
 DROP TABLE IF EXISTS `Erasmus`.`erasmusinfo`;
 CREATE TABLE `Erasmus`.`erasmusinfo` (
-  `idErasmusInfo` INT NOT NULL,
+  `user_id` int(11) NOT NULL,
   `ErasmusName` VARCHAR(45) NULL,
   `ErasmusSurname` VARCHAR(45) NULL,
   `ErasmusGender` VARCHAR(45) NULL,
@@ -56,13 +56,15 @@ CREATE TABLE `Erasmus`.`erasmusinfo` (
   `ErasmusFacultyAGH` VARCHAR(45) NULL,
   `ErasmusSupervisor` VARCHAR(45) NULL,
   `Dormitory` CHAR(3) NULL,
-  PRIMARY KEY (`idErasmusInfo`))
+  PRIMARY KEY (`user_id`),
+  CONSTRAINT `erasmusinfo_user` FOREIGN KEY (`user_id`) REFERENCES `Erasmus`.`user` (`id`)
+  )
   ENGINE=InnoDB DEFAULT CHARSET=utf8
 COMMENT = 'Table contains personal information about Eramsus Student ';
 
 DROP TABLE IF EXISTS `Erasmus`.`mentorinfo`;
 CREATE TABLE `Erasmus`.`mentorinfo` (
-  `idMentorInfo` INT NOT NULL,
+  `user_id` int(11) NOT NULL,
   `MentorName` VARCHAR(45) NULL,
   `MentorSurname` VARCHAR(45) NULL,
   `MentorGender` VARCHAR(45) NULL,
@@ -72,7 +74,9 @@ CREATE TABLE `Erasmus`.`mentorinfo` (
   `MentorCountryOfErasmus` VARCHAR(45) NULL,
   `MentorFacultyAGH` VARCHAR(45) NULL,
   `MentorESN` CHAR(3) NULL,
-  PRIMARY KEY (`idMentorInfo`))
+  PRIMARY KEY (`user_id`),
+  CONSTRAINT `mentorinfo_user` FOREIGN KEY (`user_id`) REFERENCES `Erasmus`.`user` (`id`)
+  )
   ENGINE=InnoDB DEFAULT CHARSET=utf8
 COMMENT = 'Table contains personal information about Mentor Student ';
 

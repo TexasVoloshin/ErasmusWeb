@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.karolinawoloszyn.model.ErasmusInfo;
 @Repository("erasmusInfoRepository")
-public interface ErasmusInfoRepository  extends JpaRepository<ErasmusInfo, Long>  {
+public interface ErasmusInfoRepository  extends JpaRepository<ErasmusInfo, Integer>  {
 
 }

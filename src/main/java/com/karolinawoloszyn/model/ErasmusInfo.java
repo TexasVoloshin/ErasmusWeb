@@ -1,68 +1,77 @@
 
 package com.karolinawoloszyn.model;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
-
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "erasmusinfo")
 
 public class ErasmusInfo {
- 
- public int getIdErasmusInfo() {
-		return idErasmusInfo;
+
+	@Id
+	@Column(name = "user_id")
+	private int userId;
+
+	@Column(name = "ErasmusEmail")
+	private String ErasmusEmail;
+
+	@Column(name = "ErasmusName")
+	private String ErasmusName;
+
+	@Column(name = "ErasmusSurname")
+	private String ErasmusSurname;
+
+	@Column(name = "ErasmusGender")
+	private String ErasmusGender;
+
+	@Column(name = "ErasmusCountry")
+	private String ErasmusCountry;
+
+	@Column(name = "ErasmusUni")
+	private String ErasmusUni;
+
+	@Column(name = "ErasmusStudies")
+	private String ErasmusStudies;
+
+	@Column(name = "ErasmusFacultyAGH")
+	private String ErasmusFacultyAGH;
+
+	@Column(name = "ErasmusSupervisor")
+	private String ErasmusSupervisor;
+
+	@Column(name = "Dormitory")
+	private String Dormitory;
+
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	public User getUser() {
+		return user;
 	}
 
-@Id
- @GeneratedValue(strategy = GenerationType.AUTO)
- private int idErasmusInfo;
- 
- @Column(name = "ErasmusEmail")
- private String ErasmusEmail;
- 
- @Column(name = "ErasmusName")
- private String ErasmusName; 
- 
- @Column(name = "ErasmusSurname")
- private String ErasmusSurname;
- 
- @Column(name = "ErasmusGender")
- private String ErasmusGender;
- 
- @Column(name = "ErasmusCountry")
- private String ErasmusCountry;
- 
- @Column(name = "ErasmusUni")
- private String ErasmusUni;
- 
- @Column(name = "ErasmusStudies")
- private String ErasmusStudies;
- 
- @Column(name = "ErasmusFacultyAGH")
- private String ErasmusFacultyAGH;
- 
- @Column(name = "ErasmusSupervisor")
- private String ErasmusSupervisor;
- 
- @Column(name = "Dormitory")
- private String Dormitory;
- 
- @ManyToMany(cascade=CascadeType.ALL)
- @JoinTable(name="user_role", joinColumns=@JoinColumn(name="user_id"), inverseJoinColumns=@JoinColumn(name="role_id"))
- private Set<Role> roles;
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public int getUserId() {
+		return userId;
+	}
 
-	public void setIdErasmusInfo(int idErasmusInfo) {
-		this.idErasmusInfo = idErasmusInfo;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public String getErasmusEmail() {
@@ -145,27 +154,20 @@ public class ErasmusInfo {
 		Dormitory = dormitory;
 	}
 
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
 	@Override
 	public String toString() {
-		return  String.format( "Customer[idErasmusInfo=%d, ErasmusName='%s', ErasmusSurname='%s']",
-				idErasmusInfo, ErasmusName, ErasmusSurname);
+		return String.format("Customer[userId=%d, ErasmusName='%s', ErasmusSurname='%s']", userId,
+				ErasmusName, ErasmusSurname);
 	}
-				
-		/*		
-				"ErasmusInfo [idErasmusInfo=" + idErasmusInfo + ", ErasmusEmail=" + ErasmusEmail + ", ErasmusName="
-				+ ErasmusName + ", ErasmusSurname=" + ErasmusSurname + ", ErasmusGender=" + ErasmusGender
-				+ ", ErasmusCountry=" + ErasmusCountry + ", ErasmusUni=" + ErasmusUni + ", ErasmusStudies="
-				+ ErasmusStudies + ", ErasmusFacultyAGH=" + ErasmusFacultyAGH + ", ErasmusSupervisor="
-				+ ErasmusSupervisor + ", Dormitory=" + Dormitory + "]";
-	}
-*/
- 
+
+	/*
+	 * "ErasmusInfo [idErasmusInfo=" + idErasmusInfo + ", ErasmusEmail=" +
+	 * ErasmusEmail + ", ErasmusName=" + ErasmusName + ", ErasmusSurname=" +
+	 * ErasmusSurname + ", ErasmusGender=" + ErasmusGender + ", ErasmusCountry=" +
+	 * ErasmusCountry + ", ErasmusUni=" + ErasmusUni + ", ErasmusStudies=" +
+	 * ErasmusStudies + ", ErasmusFacultyAGH=" + ErasmusFacultyAGH +
+	 * ", ErasmusSupervisor=" + ErasmusSupervisor + ", Dormitory=" + Dormitory +
+	 * "]"; }
+	 */
+
 }
