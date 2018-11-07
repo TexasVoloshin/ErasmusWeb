@@ -106,6 +106,10 @@ public class UserController {
   model.addObject("userLastname", user.getLastname());
   model.addObject("userEmail", user.getEmail());
   model.addObject("userRoles", user.getRoleNames());
+  
+  List<User> allUsers = userService.findAllOrderedByNameDescending();
+  model.addObject("allUsers", allUsers);
+  
   model.setViewName("home/home");
   return model;
  }

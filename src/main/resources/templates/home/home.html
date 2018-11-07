@@ -65,6 +65,32 @@ xmlns:th="http://www.thymeleaf.org">
                 </tbody>
 </table>
            </div>
+           
+           
+           <div>
+	<h2>All users</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<th:block th:each="user : ${allUsers}">
+				<tr>
+					<td><span th:text="${user.firstname}"/></td>
+					<td><span th:text="${user.lastname}"/></td>
+					<td> <span th:text="${user.email}"/></td>
+				</tr>
+			</th:block>
+		</tbody>
+	</table>
+</div>
+           
+           
+           
     
     
         <div class="clear"></div>  
