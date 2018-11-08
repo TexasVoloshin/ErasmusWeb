@@ -17,7 +17,8 @@ public class ErasmusInfoServiceImpl implements ErasmusInfoService {
 	@Override
 	public ErasmusInfo saveErasmusInfo(ErasmusInfo erasmusInfo) {
 		
-		Optional<ErasmusInfo> erasmusInfoOptional = erasmusInfoRepository.findById(erasmusInfo.getUser().getId());
+		int userId = erasmusInfo.getUser().getId();
+		Optional<ErasmusInfo> erasmusInfoOptional = erasmusInfoRepository.findById(userId);
 		
 		if(erasmusInfoOptional.isPresent()) {
 			//UPDATE
@@ -28,6 +29,8 @@ public class ErasmusInfoServiceImpl implements ErasmusInfoService {
 			return erasmusInfoRepository.save(erasmusInfoFromDb);
 		}else {
 			//INSERT
+			erasmusInfo.setUser(null);
+			erasmusInfo.setUserId(userId);
 			return erasmusInfoRepository.save(erasmusInfo);
 		}
 		
