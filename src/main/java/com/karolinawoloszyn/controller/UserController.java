@@ -57,6 +57,16 @@ public class UserController {
   return model;
  }
  
+ @RequestMapping(value= {"/signupAdmin"}, method=RequestMethod.GET)
+ public ModelAndView signupAdmin() {
+  ModelAndView model = new ModelAndView();
+  User user = new User();
+  model.addObject("user", user);
+  model.setViewName("user/signupAdmin");
+  
+  return model;
+ }
+ 
  @RequestMapping(value= {"/signup_erasmus"}, method=RequestMethod.POST)
  public ModelAndView createErasmus(@Valid User user, BindingResult bindingResult) {
   ModelAndView model = new ModelAndView();
@@ -73,9 +83,12 @@ public class UserController {
    model.addObject("user", new User());
    model.setViewName("user/signup");
   }
-  
+
   return model;
  }
+ 
+ 
+ 
  @RequestMapping(value= {"/signup_mentor"}, method=RequestMethod.POST)
  public ModelAndView createMentor(@Valid User user, BindingResult bindingResult) {
   ModelAndView model = new ModelAndView();
@@ -85,17 +98,40 @@ public class UserController {
    bindingResult.rejectValue("email", "error.user", "This email already exists!");
   }
   if(bindingResult.hasErrors()) {
-   model.setViewName("user/signup");
+   model.setViewName("user/signupMentor");
   } else {
    userService.saveMentor(user);
    model.addObject("msg", "User has been registered successfully! Now you can login.");
    model.addObject("user", new User());
-   model.setViewName("user/signup");
+   model.setViewName("user/signupMentor");
   }
   
   return model;
  }
  
+ 
+ //dodawanie admina
+ 
+ 
+ @RequestMapping(value= {"/signup_admin"}, method=RequestMethod.POST)
+ public ModelAndView createAdmin(@Valid User user, BindingResult bindingResult) {
+  ModelAndView model = new ModelAndView();
+  User userExists = userService.findUserByEmail(user.getEmail());
+  
+  if(userExists != null) {
+   bindingResult.rejectValue("email", "error.user", "This email already exists!");
+  }
+  if(bindingResult.hasErrors()) {
+   model.setViewName("user/signupAdmin");
+  } else {
+   userService.saveMentor(user);
+   model.addObject("msg", "Admin has been registered successfully! Now you can login.");
+   model.addObject("user", new User());
+   model.setViewName("user/signupAdmin");
+  }
+  
+  return model;
+ }
  @RequestMapping(value= {"/home/home"}, method=RequestMethod.GET)
  public ModelAndView home() {
   ModelAndView model = new ModelAndView();
@@ -114,6 +150,23 @@ public class UserController {
   return model;
  }
  
+ @RequestMapping(value= {"/home/admin"}, method=RequestMethod.GET)
+ public ModelAndView homeAdin() {
+  ModelAndView model = new ModelAndView();
+  Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+  User user = userService.findUserByEmail(auth.getName());
+  
+  model.addObject("userFirstname", user.getFirstname());
+  model.addObject("userLastname", user.getLastname());
+  model.addObject("userEmail", user.getEmail());
+  model.addObject("userRoles", user.getRoleNames());
+  
+  List<User> allUsers = userService.findAllOrderedByNameDescending();
+  model.addObject("allUsers", allUsers);
+  
+  model.setViewName("home/admin");
+  return model;
+ }
  @RequestMapping(value= {"/access_denied"}, method=RequestMethod.GET)
  public ModelAndView accessDenied() {
   ModelAndView model = new ModelAndView();

@@ -49,6 +49,14 @@ public class UserServiceImpl implements UserService {
   userRepository.save(user);
  }
  @Override
+ public void saveAdmin(User user) {
+  user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+  user.setActive(1);
+  Role userRole = roleRespository.findByRole("ADMIN");
+  user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
+  userRepository.save(user);
+ }
+ @Override
  public List<User> findAllOrderedByNameDescending() {
 
      List<User> user = (List<User>) userRepository.findAllOrderedByNameDescending();

@@ -27,7 +27,7 @@ xmlns:th="http://www.thymeleaf.org">
        </div> 
        <div class="menu">
            <ul>
-                       <li><a href="@{/}" target="_blank">HOME</a></li>
+                    
                 <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
                <li><a th:href="@{/contact}">CONTACT</a></li>
                <li><a th:href="@{/logout}">LOGOUT</a></li>
@@ -43,16 +43,18 @@ xmlns:th="http://www.thymeleaf.org">
             
             <a th:if="${userRoles.contains('ERASMUS')}" th:href="@{/application_form}">APPLY FOR MENTOR</a>
             <a th:if="${userRoles.contains('MENTOR')}" th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
+            <a th:if="${userRoles.contains('ADMIN')}" th:href="@{/home/admin}">List of registered Erasmuses and Mentors </a>
 
             <div>
-                              <h2 >All user details</h2>
+                              <h2 >All your details</h2>
                               
-<table border="1">
+<table border="1" >
 <thead>
     <tr>
        <th>Firstname</th>
         <th>Lastname</th>
          <th>Email</th>
+         	<th>Role</th>
     </tr>
     </thead>
      <tbody>
@@ -61,14 +63,15 @@ xmlns:th="http://www.thymeleaf.org">
                <td><span th:utext="${userFirstname}"></span></td>
                <td><span th:utext="${userLastname}"></span></td>
                <td th:text="${userEmail}"></td>
+                  <td th:text="${ userRoles}"></td>
                 </tr>
                 </tbody>
 </table>
-           </div>
+          </div>
            
-           
+          <!-- 
            <div>
-	<h2>All users</h2>
+	<h2>All registered erasmus and mentors</h2>
 	<table border="1">
 		<thead>
 			<tr>
@@ -87,8 +90,8 @@ xmlns:th="http://www.thymeleaf.org">
 			</th:block>
 		</tbody>
 	</table>
-</div>
-           
+</div> 
+          -->  
            
            
     

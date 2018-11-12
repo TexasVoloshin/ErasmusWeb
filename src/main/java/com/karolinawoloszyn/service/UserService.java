@@ -12,6 +12,7 @@ public interface UserService {
  public void saveErasmus(User user);
  public void saveMentor(User user);
  public List<User> findAllOrderedByNameDescending();
+ public void saveAdmin(User user);
 
 
  

@@ -41,30 +41,56 @@ xmlns:th="http://www.thymeleaf.org">
                     <h2>Hi Admin:  <span th:utext="${userName}"></span>! You are Program Coordinator!</h2>
                     <a th:href="@{/logout}">LOGOUT</a>
                    </div>
-                     <div>
-                              <a >All registered users</a>
+                    </div>
+           
+                               <h2 >Admin login details</h2>
                               
- <table>
-            <tr>
-                <th>Id</th>  
-                <th>Firstame</th>
-                <th>Lastname</th>  
-                <th>Email</th>
-                
-            </tr>        
-
-            <#list users as user>
-                <tr>
-                    <td>${user.id}</td> 
-                    <td>${user.firstame}</td> 
-                    <td>${user.lastname}</td>
-                                        <td>${user.email}</td>
-                    
-                    
+<table border="1" >
+<thead>
+    <tr>
+       <th>Firstname</th>
+        <th>Lastname</th>
+         <th>Email</th>
+          <th>Role</th>
+    </tr>
+    </thead>
+     <tbody>
+               <!--  <tr th:each="user:${user}"> -->
+               
+               <td><span th:utext="${userFirstname}"></span></td>
+               <td><span th:utext="${userLastname}"></span></td>
+               <td th:text="${userEmail}"></td>
+               <td th:text="${ userRoles}"></td>
+              
                 </tr>
-            </#list>        
-        </table>  
-           </div>
+                </tbody>
+</table>
+          </div>
+           
+           <div>
+	<h2>All registered erasmus and mentors</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Email</th>
+				<th>Role</th>
+			</tr>
+		</thead>
+		<tbody>
+			<th:block th:each="user : ${allUsers}">
+				<tr>
+					<td><span th:text="${user.firstname}"/></td>
+					<td><span th:text="${user.lastname}"/></td>
+					<td> <span th:text="${user.email}"/></td>
+					   <td th:text="${ userRoles}"></td>
+              
+				</tr>
+			</th:block>
+		</tbody>
+	</table>
+</div>
   
 
             

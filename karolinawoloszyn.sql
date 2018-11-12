@@ -80,7 +80,7 @@ CREATE TABLE `Erasmus`.`mentorinfo` (
   ENGINE=InnoDB DEFAULT CHARSET=utf8
 COMMENT = 'Table contains personal information about Mentor Student ';
 
-
 INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
 INSERT INTO `Erasmus`.`role` VALUES (2,'ERASMUS');
 INSERT INTO `Erasmus`.`role` VALUES (3,'MENTOR');
+
