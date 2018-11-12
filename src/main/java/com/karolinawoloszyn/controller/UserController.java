@@ -185,12 +185,12 @@ public class UserController {
    model.setViewName("form/form_Erasmus");
    return model;
  }*/
-  @RequestMapping(value= {"/assign_erasmus"}, method=RequestMethod.GET)
+/*  @RequestMapping(value= {"/assign_erasmus"}, method=RequestMethod.GET)
   public ModelAndView assignForm() {
    ModelAndView model = new ModelAndView();
    model.setViewName("form/form_Mentor");
    return model;
- }
+ }*/
   @GetMapping("/showUserList")
   public String findAllOrderedByNameDescending(Model model) {
       

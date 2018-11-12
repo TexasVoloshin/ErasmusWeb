@@ -24,32 +24,37 @@ public class ErasmusInfo {
 	@Column(name = "user_id")
 	private int userId;
 
-	@Column(name = "ErasmusEmail")
-	private String ErasmusEmail;
+	@Column(name = "erasmus_email")
+	private String erasmus_email;
 
-	@Column(name = "ErasmusName")
-	private String ErasmusName;
+	@Column(name = "erasmus_name")
+	private String erasmus_name;
 
-	@Column(name = "ErasmusSurname")
-	private String ErasmusSurname;
+	@Column(name = "erasmus_surname")
+	private String erasmus_surname;
 
-	@Column(name = "ErasmusGender")
-	private String ErasmusGender;
+	@Column(name = "erasmus_gender")
+	private String erasmus_gender;
 
-	@Column(name = "ErasmusCountry")
-	private String ErasmusCountry;
+	@Column(name = "erasmus_tel")
+	private String erasmus_tel;
+	
+	
 
-	@Column(name = "ErasmusUni")
-	private String ErasmusUni;
+	@Column(name = "erasmus_country")
+	private String erasmus_country;
 
-	@Column(name = "ErasmusStudies")
-	private String ErasmusStudies;
+	@Column(name = "erasmus_uni")
+	private String erasmus_uni;
 
-	@Column(name = "ErasmusFacultyAGH")
-	private String ErasmusFacultyAGH;
+	@Column(name = "erasmus_studies")
+	private String erasmus_studies;
 
-	@Column(name = "ErasmusSupervisor")
-	private String ErasmusSupervisor;
+	@Column(name = "erasmus_facultyAGH")
+	private String erasmus_facultyAGH;
+
+	@Column(name = "erasmus_supervisor")
+	private String erasmus_supervisor;
 
 	@Column(name = "Dormitory")
 	private String Dormitory;
@@ -74,76 +79,83 @@ public class ErasmusInfo {
 		this.userId = userId;
 	}
 
-	public String getErasmusEmail() {
-		return ErasmusEmail;
+	public String getErasmus_email() {
+		return erasmus_email;
 	}
 
-	public void setErasmusEmail(String erasmusEmail) {
-		ErasmusEmail = erasmusEmail;
+	public void setErasmus_email(String Erasmus_email) {
+		erasmus_email = Erasmus_email;
 	}
 
-	public String getErasmusName() {
-		return ErasmusName;
+	public String getErasmus_name() {
+		return erasmus_name;
 	}
 
-	public void setErasmusName(String erasmusName) {
-		ErasmusName = erasmusName;
+	public void setErasmus_name(String Erasmus_name) {
+		erasmus_name = Erasmus_name;
 	}
 
-	public String getErasmusSurname() {
-		return ErasmusSurname;
+	public String getErasmus_surname() {
+		return erasmus_surname;
 	}
 
-	public void setErasmusSurname(String erasmusSurname) {
-		ErasmusSurname = erasmusSurname;
+	public void setErasmus_surname(String Erasmus_surname) {
+		erasmus_surname = Erasmus_surname;
 	}
 
-	public String getErasmusGender() {
-		return ErasmusGender;
+	public String getErasmus_gender() {
+		return erasmus_gender;
 	}
 
-	public void setErasmusGender(String erasmusGender) {
-		ErasmusGender = erasmusGender;
+	public void setErasmus_gender(String Erasmus_gender) {
+		erasmus_gender = Erasmus_gender;
+	}
+	
+	public  String getErasmus_tel() {
+		return erasmus_tel;
 	}
 
-	public String getErasmusCountry() {
-		return ErasmusCountry;
+	public void setErasmus_tel(String Erasmus_tel) {
+		erasmus_tel = Erasmus_tel;
+	}
+	public String getErasmus_country(String erasmus_country) {
+		return erasmus_country;
 	}
 
-	public void setErasmusCountry(String erasmusCountry) {
-		ErasmusCountry = erasmusCountry;
+	public void setErasmus_country(String Erasmus_country) {
+		erasmus_country = Erasmus_country;
 	}
 
-	public String getErasmusUni() {
-		return ErasmusUni;
+	public String getErasmus_uni() {
+		return erasmus_uni;
 	}
 
-	public void setErasmusUni(String erasmusUni) {
-		ErasmusUni = erasmusUni;
+	public void setErasmus_uni(String Erasmus_uni) {
+		erasmus_uni = Erasmus_uni;
 	}
 
-	public String getErasmusStudies() {
-		return ErasmusStudies;
+	public String getErasmus_studies(String erasmus_studies) {
+		return erasmus_studies;
 	}
 
-	public void setErasmusStudies(String erasmusStudies) {
-		ErasmusStudies = erasmusStudies;
+	public void seterasmus_studies(String Erasmus_studies) {
+		erasmus_studies = Erasmus_studies;
 	}
 
-	public String getErasmusFacultyAGH() {
-		return ErasmusFacultyAGH;
+	public String getErasmus_facultyAGH(String erasmus_facultyAGH) {
+		return erasmus_facultyAGH;
 	}
 
-	public void setErasmusFacultyAGH(String erasmusFacultyAGH) {
-		ErasmusFacultyAGH = erasmusFacultyAGH;
+	public void setErasmus_facultyAGH(String Erasmus_facultyAGH) {
+		erasmus_facultyAGH = Erasmus_facultyAGH;
 	}
 
-	public String getErasmusSupervisor() {
-		return ErasmusSupervisor;
+	public String getErasmus_supervisor() {
+		return erasmus_supervisor;
 	}
 
-	public void setErasmusSupervisor(String erasmusSupervisor) {
-		ErasmusSupervisor = erasmusSupervisor;
+	public void setErasmus_supervisor(String Erasmus_supervisor) {
+		erasmus_supervisor = Erasmus_supervisor;
 	}
 
 	public String getDormitory() {
@@ -156,8 +168,8 @@ public class ErasmusInfo {
 
 	@Override
 	public String toString() {
-		return String.format("Customer[userId=%d, ErasmusName='%s', ErasmusSurname='%s']", userId,
-				ErasmusName, ErasmusSurname);
+		return String.format("Customer[userId=%d, erasmus_name='%s', erasmus_surname='%s', erasmus_email='%s', erasmus_gender='%s',  erasmus_uni='%s', erasmus_tel='%s', erasmus_studies='%s',  erasmus_country='%s',  erasmus_facultyAGH='%s']", userId,
+				erasmus_name, erasmus_surname, erasmus_email, erasmus_gender,  erasmus_uni, erasmus_tel, erasmus_studies,  erasmus_country,  erasmus_facultyAGH);
 	}
 
 	/*

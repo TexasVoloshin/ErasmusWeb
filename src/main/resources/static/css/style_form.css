@@ -245,13 +245,13 @@ ul li input{
   .button {
     border: 0;
     outline: none;
-    border-radius: 0;
-    padding: 15px 0;
-    font-size: 2rem;
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
     font-family: Barlow;
-    letter-spacing: .1em;
+ /*    letter-spacing: .1em; */
     background: #191cb1;
     color: white;
     transition: all 0.5s ease;
@@ -259,6 +259,7 @@ ul li input{
   }
   .button:hover, .button:focus {
     background: #1e0063;
+    color: white;
   }
   
   .button-block {

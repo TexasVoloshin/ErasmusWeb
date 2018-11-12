@@ -41,7 +41,7 @@ xmlns:th="http://www.thymeleaf.org">
             <div class="container">
                     <h2>Hi <span th:utext="${userFirstname}"></span>! Let the adventure begin!</h2>
             
-            <a th:if="${userRoles.contains('ERASMUS')}" th:href="@{/application_form}">APPLY FOR MENTOR</a>
+            <a th:if="${userRoles.contains('ERASMUS')}" th:href="@{/application_form}" >APPLY FOR MENTOR</a>
             <a th:if="${userRoles.contains('MENTOR')}" th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
             <a th:if="${userRoles.contains('ADMIN')}" th:href="@{/home/admin}">List of registered Erasmuses and Mentors </a>
 

@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.karolinawoloszyn.model.ErasmusInfo;
+import com.karolinawoloszyn.model.MentorInfo;
 import com.karolinawoloszyn.model.User;
-import com.karolinawoloszyn.service.ErasmusInfoService;
+import com.karolinawoloszyn.service.MentorInfoService;
 import com.karolinawoloszyn.service.UserService;
  
  
 @Controller
-public class ErasmusInfoController {
+public class MentorInfoController {
 	 @Autowired
 	 private UserService userService;
 	 
 	 @Autowired
-	 private ErasmusInfoService erasmusInfoService;
+	 private MentorInfoService mentorInfoService;
  
     Logger log = LoggerFactory.getLogger(this.getClass());
      
@@ -43,37 +43,37 @@ public class ErasmusInfoController {
    }
     */
     
-   @RequestMapping(value= {"/application_form"}, method=RequestMethod.GET)
-    public ModelAndView assignMentor() {
+   @RequestMapping(value= {"/assign_erasmus"}, method=RequestMethod.GET)
+    public ModelAndView assignErasmus() {
      ModelAndView model = new ModelAndView();
-     ErasmusInfo erasmusInfo = new ErasmusInfo();
-     model.addObject("erasmusInfo", erasmusInfo);
-    model.setViewName("form/form_Erasmus");
+     MentorInfo mentorInfo = new MentorInfo();
+     model.addObject("mentorInfo", mentorInfo);
+    model.setViewName("form/form_Mentor");
     
      return model;
     }
 
 
-    @RequestMapping(value= {"/erasmusApplicationResult"}, method=RequestMethod.GET)
-    public ModelAndView resultErasmus() {
+    @RequestMapping(value= {"/mentorApplicationResult"}, method=RequestMethod.GET)
+    public ModelAndView resultMentor() {
      ModelAndView model = new ModelAndView();
-     model.setViewName("form/erasmusApplicationResult");
+     model.setViewName("form/mentorApplicationResult");
      return model;
     }
     
-	@RequestMapping(value = "/application_form", method = RequestMethod.POST)
-	public ModelAndView erasmusSubmit(@ModelAttribute ErasmusInfo erasmusInfo) {
+	@RequestMapping(value = "/assign_erasmus", method = RequestMethod.POST)
+	public ModelAndView mentorSubmit(@ModelAttribute MentorInfo mentorInfo) {
 		ModelAndView model = new ModelAndView();
 
 		SecurityContext securityContext = SecurityContextHolder.getContext();
 		String email = securityContext.getAuthentication().getName();
 		
 		User user = userService.findUserByEmail(email);
-		erasmusInfo.setUser(user);
-		erasmusInfo = erasmusInfoService.saveErasmusInfo(erasmusInfo);
+		MentorInfo.setUser(user);
+		mentorInfo = mentorInfoService.saveMentorInfo(mentorInfo);
 
-		model.addObject("erasmusInfo", erasmusInfo);
-		model.setViewName("form/erasmusApplicationResult");
+		model.addObject("mentorInfo", mentorInfo);
+		model.setViewName("form/mentorApplicationResult");
 		return model;
 	}
     
@@ -82,7 +82,7 @@ public class ErasmusInfoController {
      ModelAndView model = new ModelAndView();
       
       userService.saveMentor(erasmusInfo);
-      model.addObject("msg", "Your application has been sent  successfully! You can await contact from your mentor");
+      model.addObject("msg", "Ypur application has been sent  successfully! You can await contact from your mentor");
       model.addObject("erasmusInfo", new ErasmusInfo());
       model.setViewName("erasmusApplicationResult");
      }

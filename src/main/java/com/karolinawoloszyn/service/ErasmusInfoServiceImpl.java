@@ -23,8 +23,12 @@ public class ErasmusInfoServiceImpl implements ErasmusInfoService {
 		if(erasmusInfoOptional.isPresent()) {
 			//UPDATE
 			ErasmusInfo erasmusInfoFromDb = erasmusInfoOptional.get();
-			erasmusInfoFromDb.setErasmusName(erasmusInfo.getErasmusName());
-			erasmusInfoFromDb.setErasmusSurname(erasmusInfo.getErasmusSurname());
+			erasmusInfoFromDb.setErasmus_name(erasmusInfo.getErasmus_name());
+			erasmusInfoFromDb.setErasmus_surname(erasmusInfo.getErasmus_surname());
+			erasmusInfoFromDb.setErasmus_email(erasmusInfo.getErasmus_email());
+			erasmusInfoFromDb.setErasmus_gender(erasmusInfo.getErasmus_gender());
+			erasmusInfoFromDb.setErasmus_uni(erasmusInfo.getErasmus_uni());
+			erasmusInfoFromDb.setErasmus_tel(erasmusInfo.getErasmus_tel());
 			//TODO copy the remaining fields
 			return erasmusInfoRepository.save(erasmusInfoFromDb);
 		}else {

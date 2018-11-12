@@ -24,7 +24,7 @@
                  <li><a href="/" target="_blank">HOME</a></li>
                 <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
                <li><a href="/contact">CONTACT</a></li>
-               <li><a href="/login">LOGIN</a></li>
+               <li><a href="/">LOGOUT</a></li>
             </ul>
        </div>
     </header>
@@ -36,21 +36,21 @@
           <div id="signup">   
             <h1>Please fill up this form if you want to take after Erasmus student</h1>
             
-            <form action="/" method="post">
+            <form role="form"th:action="@{/assign_erasmus}" th:object="${mentorInfo}" method="post">
             
             <div class="top-row">
               <div class="field-wrap">
                 <label>
                   First Name<span class="req">*</span>
                 </label>
-                <input type="text" required autocomplete="off" />
+                <input  type="text" required autocomplete="off" th:field="*{mentor_name}"/>
               </div>
           
               <div class="field-wrap">
-                <label>
+              <label>
                   Last Name<span class="req">*</span>
                 </label>
-                <input type="text"required autocomplete="off"/>
+             <input type="text"required autocomplete="off" th:field="*{mentor_surname}" />
               </div>
             </div>
      
@@ -169,7 +169,7 @@
                       </div>
 
                       <div>
-                        <h4><script type= "text/javascript" src = "faculty_agh.js"></script>
+                        <h4><script type= "text/javascript" src = "js/faculty_agh.js"></script>
                         Select Faculty at AGH: <span class="req">*</span> 
                          <select id="faculty" name ="faculty"></select> 
                         </h4>
@@ -180,7 +180,7 @@
                         
                     </script>
                      <div >
-                      <h4><script type= "text/javascript" src = "countries.js"></script>
+                      <h4><script type= "text/javascript" src = "js/countries.js"></script>
                       Select Country of Erasmus origin: <span class="req">*</span> 
                        <select id="country" name ="country"></select> 
                       </h4>
