@@ -65,16 +65,16 @@ public class MentorInfo {
 		return user;
 	}
 
-	public static  void setUser(User user) {
-		/*this.*/user = user;
+	public   void setUser(User user) {
+		this.user = user;
 	}
 	
 	public int getUserId() {
 		return userId;
 	}
 
-	public static  void setUserId(int userId) {
-	/*this.*/userId = userId;
+	public   void setUserId(int userId) {
+	this.userId = userId;
 	}
 
 	public String getMentor_email() {

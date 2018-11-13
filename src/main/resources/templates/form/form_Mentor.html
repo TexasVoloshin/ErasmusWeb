@@ -21,10 +21,10 @@
       
        <div class="menu">
            <ul>
-                 <li><a href="/" target="_blank">HOME</a></li>
+                <li><a href="@{/index}" target="_blank">HOME</a></li>
                 <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
-               <li><a href="/contact">CONTACT</a></li>
-               <li><a href="/">LOGOUT</a></li>
+               <li><a th:href="@{/contact}">CONTACT</a></li>
+               <li><a th:href="@{/logout}">LOGOUT</a></li>
             </ul>
        </div>
     </header>
@@ -60,10 +60,11 @@
                         <li><h4>Gender: <span class="req">*</span></h4> </li>
  <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
  <li>  <div class="custom-select" style="width:200px;">
-                      <select>
-                        <option  value="0">Male</option>
-                        <option value="1">Female</option>
-                        <option value="2">Other</option>
+                      <select type="text"required autocomplete="off" th:field="*{mentor_gender}">
+                      
+                        <option  value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                       </select>
                    
                     </div> 
@@ -151,13 +152,13 @@
               <label>
                 Email Address<span class="req">*</span>
               </label>
-              <input type="email"required autocomplete="off"/>
+              <input type="text" required autocomplete="off" th:field="*{mentorInfo.mentor_email}"/>
             </div>
             <div class="field-wrap">
                     <label>
                       Telephone<span class="req">*</span>
                     </label>
-                    <input type="telephone"required autocomplete="off"/>
+                    <input  type="text" required autocomplete="off" th:field="*{mentorInfo.mentor_tel}">
                   </div>
                  
             
@@ -204,7 +205,7 @@
                                   </li></ul>
                                
                                     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-                                    <script type="text/javascript" src="segment.js"></script>
+                                    <script type="text/javascript" src="js/segment.js"></script>
                                     <script type="text/javascript">
                                         jQuery(function ($){
                                              $(".segment-select").Segment();

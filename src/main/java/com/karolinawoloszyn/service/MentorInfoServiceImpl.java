@@ -24,13 +24,16 @@ public class MentorInfoServiceImpl implements MentorInfoService {
 			MentorInfo mentorInfoFromDb = mentorInfoOptional.get();
 			mentorInfoFromDb.setMentor_name(mentorInfo.getMentor_name());
 			mentorInfoFromDb.setMentor_surname(mentorInfo.getMentor_surname());
-			
+			mentorInfoFromDb.setMentor_email(mentorInfo.getMentor_email());
+			mentorInfoFromDb.setMentor_gender(mentorInfo.getMentor_gender());
+			mentorInfoFromDb.setMentor_uni(mentorInfo.getMentor_uni());
+			mentorInfoFromDb.setMentor_tel(mentorInfo.getMentor_tel());
 			//TODO copy the remaining fields
 			return mentorInfoRepository.save(mentorInfoFromDb);
 		}else {
 			//INSERT
-			MentorInfo.setUser(null);
-			MentorInfo.setUserId(userId);
+			mentorInfo.setUser(null);
+			mentorInfo.setUserId(userId);
 			return mentorInfoRepository.save(mentorInfo);
 		}
 		

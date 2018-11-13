@@ -26,22 +26,7 @@ public class MentorInfoController {
  
     Logger log = LoggerFactory.getLogger(this.getClass());
      
-   /* @RequestMapping(value="application_form", method=RequestMethod.GET)
-    public String customerForm(Model model) {
-        model.addAttribute("erasmusInfo", new ErasmusInfo());
-        
-        return "form/application_form";
-    }
-    */
-    
-    
-   /* @RequestMapping(value= {"/application_form"}, method=RequestMethod.GET)
-    public ModelAndView formPage() {
-     ModelAndView model = new ModelAndView();
-     model.setViewName("form/form_Erasmus");
-     return model;
-   }
-    */
+
     
    @RequestMapping(value= {"/assign_erasmus"}, method=RequestMethod.GET)
     public ModelAndView assignErasmus() {
@@ -69,7 +54,7 @@ public class MentorInfoController {
 		String email = securityContext.getAuthentication().getName();
 		
 		User user = userService.findUserByEmail(email);
-		MentorInfo.setUser(user);
+		mentorInfo.setUser(user);
 		mentorInfo = mentorInfoService.saveMentorInfo(mentorInfo);
 
 		model.addObject("mentorInfo", mentorInfo);
@@ -77,17 +62,6 @@ public class MentorInfoController {
 		return model;
 	}
     
-   /* @RequestMapping(value= {"/application_form"}, method=RequestMethod.POST)
-    public ModelAndView ErasmusApplication(@Valid ErasmusInfo erasmusInfo, BindingResult bindingResult) {
-     ModelAndView model = new ModelAndView();
-      
-      userService.saveMentor(erasmusInfo);
-      model.addObject("msg", "Ypur application has been sent  successfully! You can await contact from your mentor");
-      model.addObject("erasmusInfo", new ErasmusInfo());
-      model.setViewName("erasmusApplicationResult");
-     }
-     
-     return model;
-    }*/
+  
  
 }
