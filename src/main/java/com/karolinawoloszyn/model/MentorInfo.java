@@ -120,7 +120,7 @@ public class MentorInfo {
 		return mentor_countryOfErasmus;
 	}
 
-	public void setMentor_country(String Mentor_countryOfErasmus) {
+	public void setMentor_countryOfErasmus(String Mentor_countryOfErasmus) {
 		mentor_countryOfErasmus = Mentor_countryOfErasmus;
 	}
 

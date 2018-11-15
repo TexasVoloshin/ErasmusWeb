@@ -138,7 +138,7 @@ public class ErasmusInfo {
 		return erasmus_studies;
 	}
 
-	public void seterasmus_studies(String Erasmus_studies) {
+	public void setErasmus_studies(String Erasmus_studies) {
 		erasmus_studies = Erasmus_studies;
 	}
 

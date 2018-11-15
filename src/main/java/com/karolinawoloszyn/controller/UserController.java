@@ -124,7 +124,7 @@ public class UserController {
   if(bindingResult.hasErrors()) {
    model.setViewName("user/signupAdmin");
   } else {
-   userService.saveMentor(user);
+   userService.saveAdmin(user);
    model.addObject("msg", "Admin has been registered successfully! Now you can login.");
    model.addObject("user", new User());
    model.setViewName("user/signupAdmin");

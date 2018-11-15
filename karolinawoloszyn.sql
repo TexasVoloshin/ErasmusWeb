@@ -65,20 +65,32 @@ COMMENT = 'Table contains personal information about Eramsus Student ';
 DROP TABLE IF EXISTS `Erasmus`.`mentorinfo`;
 CREATE TABLE `Erasmus`.`mentorinfo` (
   `user_id` int(11) NOT NULL,
-  `mentor_name` VARCHAR(45) NULL,
-  `mentor_surname` VARCHAR(45) NULL,
-  `mentor_gender` VARCHAR(45) NULL,
-  `mentor_email` VARCHAR(45) NULL,
-  `mentor_tel` VARCHAR(45) NULL,
-  `mentor_studies` VARCHAR(45) NULL,
-  `mentor_countryOfErasmus` VARCHAR(45) NULL,
-  `mentor_facultyAGH` VARCHAR(45) NULL,
+  `mentor_name` VARCHAR(255) NULL,
+  `mentor_surname` VARCHAR(255) NULL,
+  `mentor_gender` VARCHAR(255) NULL,
+  `mentor_email` VARCHAR(255) NULL,
+  `mentor_tel` VARCHAR(255) NULL,
+  `mentor_studies` VARCHAR(255) NULL,
+  `mentor_countryOfErasmus` VARCHAR(255) NULL,
+  `mentor_facultyAGH` VARCHAR(255) NULL,
   `mentor_ESN` CHAR(3) NULL,
   PRIMARY KEY (`user_id`),
   CONSTRAINT `mentorinfo_user` FOREIGN KEY (`user_id`) REFERENCES `Erasmus`.`user` (`id`)
   )
   ENGINE=InnoDB DEFAULT CHARSET=utf8
 COMMENT = 'Table contains personal information about Mentor Student ';
+
+DROP TABLE IF EXISTS `Erasmus`.`erasmus_mentor_match`;
+CREATE TABLE `Erasmus`.`erasmus_mentor_match` (
+`mentor_id` int(11) NOT NULL,
+`erasmus_id` int(11) NOT NULL,
+ PRIMARY KEY (`mentor_id`,`erasmus_id`),
+ CONSTRAINT `mantor_matching_id` FOREIGN KEY (`mentor_id`) REFERENCES `Erasmus`.`mentorinfo` (`user_id`),
+ CONSTRAINT `erasmus_matching_id` FOREIGN KEY (`erasmus_id`) REFERENCES `Erasmus`.`erasmusinfo` (`user_id`)
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8
+COMMENT = 'hold pairs of Erasmus and Mentor';
+
 
 INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
 INSERT INTO `Erasmus`.`role` VALUES (2,'ERASMUS');

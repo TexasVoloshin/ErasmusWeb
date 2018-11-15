@@ -28,6 +28,9 @@ public class MentorInfoServiceImpl implements MentorInfoService {
 			mentorInfoFromDb.setMentor_gender(mentorInfo.getMentor_gender());
 			mentorInfoFromDb.setMentor_uni(mentorInfo.getMentor_uni());
 			mentorInfoFromDb.setMentor_tel(mentorInfo.getMentor_tel());
+			mentorInfoFromDb.setMentor_studies(mentorInfo.getMentor_studies());
+			mentorInfoFromDb.setMentor_facultyAGH(mentorInfo.getMentor_facultyAGH());
+			mentorInfoFromDb.setMentor_countryOfErasmus(mentorInfo.getMentor_countryOfErasmus());
 			//TODO copy the remaining fields
 			return mentorInfoRepository.save(mentorInfoFromDb);
 		}else {

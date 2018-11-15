@@ -166,13 +166,13 @@
                         <label>
                           Studies<span class="req">*</span>
                         </label>
-                        <input type="Studies"required autocomplete="off"/>
+                        <input type="text"required autocomplete="off" th:field="*{mentorInfo.mentor_studies}"/>
                       </div>
 
                       <div>
                         <h4><script type= "text/javascript" src = "js/faculty_agh.js"></script>
                         Select Faculty at AGH: <span class="req">*</span> 
-                         <select id="faculty" name ="faculty"></select> 
+                         <select id="faculty" name ="mentor_facultyAGH" th:field="*{mentorInfo.mentor_facultyAGH}"></select> 
                         </h4>
                     </div>
                     
@@ -183,7 +183,7 @@
                      <div >
                       <h4><script type= "text/javascript" src = "js/countries.js"></script>
                       Select Country of Erasmus origin: <span class="req">*</span> 
-                       <select id="country" name ="country"></select> 
+                       <select id="country" name ="mentor_countryOfErasmus" th:field="*{mentorInfo.mentor_countryOfErasmus}"></select> 
                       </h4>
                   </div>
                   
