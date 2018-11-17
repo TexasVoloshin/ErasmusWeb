@@ -45,16 +45,16 @@ CREATE TABLE  `Erasmus`.`persistent_logins` (
 DROP TABLE IF EXISTS `Erasmus`.`erasmusinfo`;
 CREATE TABLE `Erasmus`.`erasmusinfo` (
   `user_id` int(11) NOT NULL,
-  `erasmus_name` VARCHAR(45) NULL,
-  `erasmus_surname` VARCHAR(45) NULL,
-  `erasmus_gender` VARCHAR(45) NULL,
-  `erasmus_email` VARCHAR(45) NULL,
-  `erasmus_tel` VARCHAR(45) NULL,
-  `erasmus_country` VARCHAR(45) NULL,
-  `erasmus_uni` VARCHAR(45) NULL,
-  `erasmus_studies` VARCHAR(45) NULL,
-  `erasmus_facultyAGH` VARCHAR(45) NULL,
-  `erasmus_supervisor` VARCHAR(45) NULL,
+  `erasmus_name` VARCHAR(255) NULL,
+  `erasmus_surname` VARCHAR(255) NULL,
+  `erasmus_gender` VARCHAR(255) NULL,
+  `erasmus_email` VARCHAR(255) NULL,
+  `erasmus_tel` VARCHAR(255) NULL,
+  `erasmus_country` VARCHAR(255) NULL,
+  `erasmus_uni` VARCHAR(255) NULL,
+  `erasmus_studies` VARCHAR(255) NULL,
+  `erasmus_facultyAGH` VARCHAR(255) NULL,
+  `erasmus_supervisor` VARCHAR(255) NULL,
   `Dormitory` CHAR(3) NULL,
   PRIMARY KEY (`user_id`),
   CONSTRAINT `erasmusinfo_user` FOREIGN KEY (`user_id`) REFERENCES `Erasmus`.`user` (`id`)
@@ -73,7 +73,7 @@ CREATE TABLE `Erasmus`.`mentorinfo` (
   `mentor_studies` VARCHAR(255) NULL,
   `mentor_countryOfErasmus` VARCHAR(255) NULL,
   `mentor_facultyAGH` VARCHAR(255) NULL,
-  `mentor_ESN` CHAR(3) NULL,
+  `ESN_member` CHAR(3) NULL,
   PRIMARY KEY (`user_id`),
   CONSTRAINT `mentorinfo_user` FOREIGN KEY (`user_id`) REFERENCES `Erasmus`.`user` (`id`)
   )

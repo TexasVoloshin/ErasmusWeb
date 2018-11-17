@@ -23,15 +23,15 @@ public class ErasmusInfoServiceImpl implements ErasmusInfoService {
 		if(erasmusInfoOptional.isPresent()) {
 			//UPDATE
 			ErasmusInfo erasmusInfoFromDb = erasmusInfoOptional.get();
-			erasmusInfoFromDb.setErasmus_name(erasmusInfo.getErasmus_name());
-			erasmusInfoFromDb.setErasmus_surname(erasmusInfo.getErasmus_surname());
-			erasmusInfoFromDb.setErasmus_email(erasmusInfo.getErasmus_email());
-			erasmusInfoFromDb.setErasmus_gender(erasmusInfo.getErasmus_gender());
-			erasmusInfoFromDb.setErasmus_uni(erasmusInfo.getErasmus_uni());
-			erasmusInfoFromDb.setErasmus_tel(erasmusInfo.getErasmus_tel());
-			/*erasmusInfoFromDb.setErasmus_studies(erasmusInfo.getErasmus_studies());
-			erasmusInfoFromDb.setErasmus_facultyAGH(erasmusInfo.getErasmus_facultyAGH());
-			erasmusInfoFromDb.setErasmus_country(erasmusInfo.getErasmus_country());*/
+			erasmusInfoFromDb.setErasmusName(erasmusInfo.getErasmusName());
+			erasmusInfoFromDb.setErasmusSurname(erasmusInfo.getErasmusSurname());
+			erasmusInfoFromDb.setErasmusEmail(erasmusInfo.getErasmusEmail());
+			erasmusInfoFromDb.setErasmusGender(erasmusInfo.getErasmusGender());
+			erasmusInfoFromDb.setErasmusUni(erasmusInfo.getErasmusUni());
+			erasmusInfoFromDb.setErasmusTel(erasmusInfo.getErasmusTel());
+			erasmusInfoFromDb.setErasmusStudies(erasmusInfo.getErasmusStudies());
+			erasmusInfoFromDb.setErasmusFacultyAGH(erasmusInfo.getErasmusFacultyAGH());
+			erasmusInfoFromDb.setErasmusCountry(erasmusInfo.getErasmusCountry());
 			return erasmusInfoRepository.save(erasmusInfoFromDb);
 		}else {
 			//INSERT

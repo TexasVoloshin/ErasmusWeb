@@ -34,15 +34,16 @@ xmlns:th="http://www.thymeleaf.org">
     <h2>Thank you! Your application has been sent. </h2>
     
  
- <p th:text="'First Name: ' + ${mentorInfo.mentor_name}" />
-    <p th:text="'Last Name: ' + ${mentorInfo.mentor_surname}" />
-    <p th:text="'Gender: ' + ${mentorInfo.mentor_gender}" />
-    <p th:text="'Email: ' + ${mentorInfo.mentor_email}" />
-    <p th:text="'Tel: ' + ${mentorInfo.mentor_tel}" />
-    <p th:text="'Country: ' + ${mentorInfo.mentor_countryOfErasmus}"/>
+ <p th:text="'First Name: ' + ${mentorInfo.mentorName}" />
+    <p th:text="'Last Name: ' + ${mentorInfo.mentorSurname}" />
+    <p th:text="'Gender: ' + ${mentorInfo.mentorGender}" />
+    <p th:text="'Email: ' + ${mentorInfo.mentorEmail}" />
+    <p th:text="'Tel: ' + ${mentorInfo.mentorTel}" />
+    <p th:text="'Country: ' + ${mentorInfo.mentorCountryOfErasmus}"/>
 <!--<p th:text="'University: ' + ${mentorInfo.mentor_uni}" /> -->
-    <p th:text="'Studies: ' + ${mentorInfo.mentor_studies}"/> 
-    <p th:text="'Faculty: ' + ${mentorInfo.mentor_facultyAGH}" />       
+    <p th:text="'Studies: ' + ${mentorInfo.mentorStudies}"/> 
+    <p th:text="'Faculty: ' + ${mentorInfo.mentorFacultyAGH}" />    
+    <p th:text="'ESN Member: ' + ${mentorInfo.esnMember}" />    
     <a th:href="@{/home/home}" class="button">Go back to home page</a>
     
     </section>

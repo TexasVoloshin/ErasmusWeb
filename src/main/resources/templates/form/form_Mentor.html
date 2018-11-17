@@ -43,14 +43,14 @@
                 <label>
                   First Name<span class="req">*</span>
                 </label>
-                <input  type="text" required autocomplete="off" th:field="*{mentor_name}"/>
+                <input  type="text" required autocomplete="off" th:field="*{mentorName}"/>
               </div>
           
               <div class="field-wrap">
               <label>
                   Last Name<span class="req">*</span>
                 </label>
-             <input type="text"required autocomplete="off" th:field="*{mentor_surname}" />
+             <input type="text"required autocomplete="off" th:field="*{mentorSurname}" />
               </div>
             </div>
      
@@ -60,7 +60,7 @@
                         <li><h4>Gender: <span class="req">*</span></h4> </li>
  <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
  <li>  <div class="custom-select" style="width:200px;">
-                      <select type="text"required autocomplete="off" th:field="*{mentor_gender}">
+                      <select type="text"required autocomplete="off" th:field="*{mentorGender}">
                       
                         <option  value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -152,13 +152,13 @@
               <label>
                 Email Address<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" th:field="*{mentorInfo.mentor_email}"/>
+              <input type="text" required autocomplete="off" th:field="*{mentorInfo.mentorEmail}"/>
             </div>
             <div class="field-wrap">
                     <label>
                       Telephone<span class="req">*</span>
                     </label>
-                    <input  type="text" required autocomplete="off" th:field="*{mentorInfo.mentor_tel}">
+                    <input  type="text" required autocomplete="off" th:field="*{mentorInfo.mentorTel}">
                   </div>
                  
             
@@ -166,13 +166,13 @@
                         <label>
                           Studies<span class="req">*</span>
                         </label>
-                        <input type="text"required autocomplete="off" th:field="*{mentorInfo.mentor_studies}"/>
+                        <input type="text"required autocomplete="off" th:field="*{mentorInfo.mentorStudies}"/>
                       </div>
 
                       <div>
                         <h4><script type= "text/javascript" src = "js/faculty_agh.js"></script>
                         Select Faculty at AGH: <span class="req">*</span> 
-                         <select id="faculty" name ="mentor_facultyAGH" th:field="*{mentorInfo.mentor_facultyAGH}"></select> 
+                         <select id="faculty" name ="mentorFacultyAGH" th:field="*{mentorInfo.mentorFacultyAGH}"></select> 
                         </h4>
                     </div>
                     
@@ -183,7 +183,7 @@
                      <div >
                       <h4><script type= "text/javascript" src = "js/countries.js"></script>
                       Select Country of Erasmus origin: <span class="req">*</span> 
-                       <select id="country" name ="mentor_countryOfErasmus" th:field="*{mentorInfo.mentor_countryOfErasmus}"></select> 
+                       <select id="country" name ="mentorCountryOfErasmus" th:field="*{mentorInfo.mentorCountryOfErasmus}"></select> 
                       </h4>
                   </div>
                   
@@ -198,9 +198,9 @@
               <li><a> </a></li>
                                <li>
                                   
-                                    <select class="segment-select">
-                                        <option value="1">Yes</option>
-                                        <option value="0">No</option>
+                                    <select class="segment-select" th:field="*{mentorInfo.esnMember}">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
                                     </select>
                                   </li></ul>
                                

@@ -25,39 +25,40 @@ public class ErasmusInfo {
 	private int userId;
 
 	@Column(name = "erasmus_email")
-	private String erasmus_email;
+	private String erasmusEmail;
 
 	@Column(name = "erasmus_name")
-	private String erasmus_name;
+	private String erasmusName;
 
 	@Column(name = "erasmus_surname")
-	private String erasmus_surname;
+	private String erasmusSurname;
 
 	@Column(name = "erasmus_gender")
-	private String erasmus_gender;
+	private String erasmusGender;
 
 	@Column(name = "erasmus_tel")
-	private String erasmus_tel;
+	private String erasmusTel;
 	
 	
 
 	@Column(name = "erasmus_country")
-	private String erasmus_country;
+	private String erasmusCountry;
 
 	@Column(name = "erasmus_uni")
-	private String erasmus_uni;
+	private String erasmusUni;
 
 	@Column(name = "erasmus_studies")
-	private String erasmus_studies;
+	private String erasmusStudies;
 
 	@Column(name = "erasmus_facultyAGH")
-	private String erasmus_facultyAGH;
+	private String erasmusFacultyAGH;
 
 	@Column(name = "erasmus_supervisor")
-	private String erasmus_supervisor;
+	private String erasmusSupervisor;
 
-	@Column(name = "Dormitory")
+	@Column(name = "dormitory")
 	private String Dormitory;
+
 
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
@@ -79,83 +80,83 @@ public class ErasmusInfo {
 		this.userId = userId;
 	}
 
-	public String getErasmus_email() {
-		return erasmus_email;
+	public String getErasmusEmail() {
+		return erasmusEmail;
 	}
 
-	public void setErasmus_email(String Erasmus_email) {
-		erasmus_email = Erasmus_email;
+	public void setErasmusEmail(String erasmusEmail) {
+		this.erasmusEmail = erasmusEmail;
 	}
 
-	public String getErasmus_name() {
-		return erasmus_name;
+	public String getErasmusName() {
+		return erasmusName;
 	}
 
-	public void setErasmus_name(String Erasmus_name) {
-		erasmus_name = Erasmus_name;
+	public void setErasmusName(String erasmusName) {
+		this.erasmusName = erasmusName;
 	}
 
-	public String getErasmus_surname() {
-		return erasmus_surname;
+	public String getErasmusSurname() {
+		return erasmusSurname;
 	}
 
-	public void setErasmus_surname(String Erasmus_surname) {
-		erasmus_surname = Erasmus_surname;
+	public void setErasmusSurname(String erasmusSurname) {
+		this.erasmusSurname = erasmusSurname;
 	}
 
-	public String getErasmus_gender() {
-		return erasmus_gender;
+	public String getErasmusGender() {
+		return erasmusGender;
 	}
 
-	public void setErasmus_gender(String Erasmus_gender) {
-		erasmus_gender = Erasmus_gender;
+	public void setErasmusGender(String erasmusGender) {
+		this.erasmusGender = erasmusGender;
 	}
 	
-	public  String getErasmus_tel() {
-		return erasmus_tel;
+	public  String getErasmusTel() {
+		return erasmusTel;
 	}
 
-	public void setErasmus_tel(String Erasmus_tel) {
-		erasmus_tel = Erasmus_tel;
+	public void setErasmusTel(String erasmusTel) {
+		this.erasmusTel = erasmusTel;
 	}
-	public String getErasmus_country(String erasmus_country) {
-		return erasmus_country;
-	}
-
-	public void setErasmus_country(String Erasmus_country) {
-		erasmus_country = Erasmus_country;
+	public String getErasmusCountry() {
+		return erasmusCountry;
 	}
 
-	public String getErasmus_uni() {
-		return erasmus_uni;
+	public void setErasmusCountry(String erasmusCountry) {
+		this.erasmusCountry = erasmusCountry;
 	}
 
-	public void setErasmus_uni(String Erasmus_uni) {
-		erasmus_uni = Erasmus_uni;
+	public String getErasmusUni() {
+		return erasmusUni;
 	}
 
-	public String getErasmus_studies(String erasmus_studies) {
-		return erasmus_studies;
+	public void setErasmusUni(String erasmusUni) {
+		this.erasmusUni = erasmusUni;
 	}
 
-	public void setErasmus_studies(String Erasmus_studies) {
-		erasmus_studies = Erasmus_studies;
+	public String getErasmusStudies() {
+		return erasmusStudies;
 	}
 
-	public String getErasmus_facultyAGH(String erasmus_facultyAGH) {
-		return erasmus_facultyAGH;
+	public void setErasmusStudies(String erasmusStudies) {
+		this.erasmusStudies = erasmusStudies;
 	}
 
-	public void setErasmus_facultyAGH(String Erasmus_facultyAGH) {
-		erasmus_facultyAGH = Erasmus_facultyAGH;
+	public String getErasmusFacultyAGH() {
+		return erasmusFacultyAGH;
 	}
 
-	public String getErasmus_supervisor() {
-		return erasmus_supervisor;
+	public void setErasmusFacultyAGH(String erasmusFacultyAGH) {
+		this.erasmusFacultyAGH = erasmusFacultyAGH;
 	}
 
-	public void setErasmus_supervisor(String Erasmus_supervisor) {
-		erasmus_supervisor = Erasmus_supervisor;
+	public String getErasmusSupervisor() {
+		return erasmusSupervisor;
+	}
+
+	public void setErasmusSupervisor(String erasmusSupervisor) {
+		this.erasmusSupervisor = erasmusSupervisor;
 	}
 
 	public String getDormitory() {
@@ -169,7 +170,7 @@ public class ErasmusInfo {
 	@Override
 	public String toString() {
 		return String.format("Customer[userId=%d, erasmus_name='%s', erasmus_surname='%s', erasmus_email='%s', erasmus_gender='%s',  erasmus_uni='%s', erasmus_tel='%s', erasmus_studies='%s',  erasmus_country='%s',  erasmus_facultyAGH='%s']", userId,
-				erasmus_name, erasmus_surname, erasmus_email, erasmus_gender,  erasmus_uni, erasmus_tel, erasmus_studies,  erasmus_country,  erasmus_facultyAGH);
+				erasmusName, erasmusSurname, erasmusEmail, erasmusGender,  erasmusUni, erasmusTel, erasmusStudies,  erasmusCountry,  erasmusFacultyAGH);
 	}
 
 	/*

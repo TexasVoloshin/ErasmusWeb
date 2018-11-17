@@ -25,37 +25,37 @@ public class MentorInfo {
 	private int userId;
 
 	@Column(name = "mentor_email")
-	private String mentor_email;
+	private String mentorEmail;
 	
 	@Column(name = "mentor_tel")
-	private String mentor_tel;
+	private String mentorTel;
 
 	@Column(name = "mentor_name")
-	private String mentor_name;
+	private String mentorName;
 
 	@Column(name = "mentor_surname")
-	private String mentor_surname;
+	private String mentorSurname;
 
 	@Column(name = "mentor_gender")
-	private String mentor_gender;
+	private String mentorGender;
 
 	@Column(name = "mentor_countryOfErasmus")
-	private String mentor_countryOfErasmus;
+	private String mentorCountryOfErasmus;
 
 	@Column(name = "mentor_uni")
-	private String mentor_uni;
+	private String mentorUni;
 
 	@Column(name = "mentor_studies")
-	private String mentor_studies;
+	private String mentorStudies;
 
 	@Column(name = "mentor_facultyAGH")
-	private String mentor_facultyAGH;
+	private String mentorFacultyAGH;
 
 	@Column(name = "mentor_supervisor")
-	private String mentor_supervisor;
+	private String mentorSupervisor;
 
-	@Column(name = "Dormitory")
-	private String Dormitory;
+	@Column(name = "ESN_member")
+	private String esnMember;
 
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_id")
@@ -77,97 +77,99 @@ public class MentorInfo {
 	this.userId = userId;
 	}
 
-	public String getMentor_email() {
-		return mentor_email;
+
+	public String getMentorEmail() {
+		return mentorEmail;
 	}
 
-	public void setMentor_email(String Mentor_email) {
-		mentor_email = Mentor_email;
+	public void setMentorEmail(String mentorEmail) {
+		this.mentorEmail = mentorEmail;
 	}
 
-	public  String getMentor_tel() {
-		return mentor_tel;
+	public String getMentorTel() {
+		return mentorTel;
 	}
 
-	public void setMentor_tel(String Mentor_tel) {
-		mentor_tel = Mentor_tel;
-	}
-	public String getMentor_name() {
-		return mentor_name;
+	public void setMentorTel(String mentorTel) {
+		this.mentorTel = mentorTel;
 	}
 
-	public void setMentor_name(String Mentor_name) {
-		mentor_name = Mentor_name;
+	public String getMentorName() {
+		return mentorName;
 	}
 
-	public String getMentor_surname() {
-		return mentor_surname;
+	public void setMentorName(String mentorName) {
+		this.mentorName = mentorName;
 	}
 
-	public void setMentor_surname(String Mentor_surname) {
-		mentor_surname = Mentor_surname;
+	public String getMentorSurname() {
+		return mentorSurname;
 	}
 
-	public String getMentor_gender() {
-		return mentor_gender;
+	public void setMentorSurname(String mentorSurname) {
+		this.mentorSurname = mentorSurname;
 	}
 
-	public void setMentor_gender(String Mentor_gender) {
-		mentor_gender = Mentor_gender;
+	public String getMentorGender() {
+		return mentorGender;
 	}
 
-	public String getMentor_countryOfErasmus() {
-		return mentor_countryOfErasmus;
+	public void setMentorGender(String mentorGender) {
+		this.mentorGender = mentorGender;
 	}
 
-	public void setMentor_countryOfErasmus(String Mentor_countryOfErasmus) {
-		mentor_countryOfErasmus = Mentor_countryOfErasmus;
+	public String getMentorCountryOfErasmus() {
+		return mentorCountryOfErasmus;
 	}
 
-	public String getMentor_uni() {
-		return mentor_uni;
+	public void setMentorCountryOfErasmus(String mentorCountryOfErasmus) {
+		this.mentorCountryOfErasmus = mentorCountryOfErasmus;
 	}
 
-	public void setMentor_uni(String Mentor_uni) {
-		mentor_uni = Mentor_uni;
+	public String getMentorUni() {
+		return mentorUni;
 	}
 
-	public String getMentor_studies() {
-		return mentor_studies;
+	public void setMentorUni(String mentorUni) {
+		this.mentorUni = mentorUni;
 	}
 
-	public void setMentor_studies(String Mentor_studies) {
-		mentor_studies = Mentor_studies;
+	public String getMentorStudies() {
+		return mentorStudies;
 	}
 
-	public String getMentor_facultyAGH() {
-		return mentor_facultyAGH;
+	public void setMentorStudies(String mentorStudies) {
+		this.mentorStudies = mentorStudies;
 	}
 
-	public void setMentor_facultyAGH(String Mentor_facultyAGH) {
-		mentor_facultyAGH = Mentor_facultyAGH;
+	public String getMentorFacultyAGH() {
+		return mentorFacultyAGH;
 	}
 
-	public String getMentor_supervisor() {
-		return mentor_supervisor;
+	public void setMentorFacultyAGH(String mentorFacultyAGH) {
+		this.mentorFacultyAGH = mentorFacultyAGH;
 	}
 
-	public void setMentor_supervisor(String Mentor_supervisor) {
-		mentor_supervisor = Mentor_supervisor;
+	public String getMentorSupervisor() {
+		return mentorSupervisor;
 	}
 
-	public String getDormitory() {
-		return Dormitory;
+	public void setMentorSupervisor(String mentorSupervisor) {
+		this.mentorSupervisor = mentorSupervisor;
 	}
 
-	public void setDormitory(String dormitory) {
-		Dormitory = dormitory;
+	public String getEsnMember() {
+		return esnMember;
+	}
+
+	public void setEsnMember(String esnMember) {
+		this.esnMember = esnMember;
 	}
 
 	@Override
 	public String toString() {
 		return String.format("Customer[userId=%d, mentor_name='%s', mentor_surname='%s', mentor_email='%s', mentor_gender='%s',  mentor_uni='%s', mentor_tel='%s', mentor_studies='%s',  mentor_countryOfErasmus='%s',  mentor_facultyAGH='%s']", userId,
-				mentor_name, mentor_surname, mentor_email, mentor_gender,  mentor_uni, mentor_tel, mentor_studies,  mentor_countryOfErasmus,  mentor_facultyAGH);
+				mentorName, mentorSurname, mentorEmail, mentorGender,  mentorUni, mentorTel, mentorStudies,  mentorCountryOfErasmus,  mentorFacultyAGH);
 	}
 
 	/*

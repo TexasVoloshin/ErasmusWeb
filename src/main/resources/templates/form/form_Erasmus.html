@@ -44,14 +44,14 @@ xmlns:th="http://www.thymeleaf.org">
                 <label>
                   First Name<span class="req">*</span>
                 </label>
-                <input type="text" required autocomplete="off" th:field="*{erasmus_name}"/>
+                <input type="text" required autocomplete="off" th:field="*{erasmusName}"/>
               </div>
           
               <div class="field-wrap">
                 <label>
                   Last Name<span class="req">*</span>
                 </label>
-                <input type="text"required autocomplete="off" th:field="*{erasmus_surname}" />
+                <input type="text"required autocomplete="off" th:field="*{erasmusSurname}" />
               </div>
             </div>
      
@@ -61,7 +61,7 @@ xmlns:th="http://www.thymeleaf.org">
                         <li><h4>Gender: <span class="req">*</span></h4> </li>
  <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
  <li>  <div class="custom-select" style="width:200px;">
-                      <select type="text"required autocomplete="off" th:field="*{erasmus_gender}">
+                      <select type="text"required autocomplete="off" th:field="*{erasmusGender}">
                         <option  value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -152,18 +152,20 @@ xmlns:th="http://www.thymeleaf.org">
                 Email Address<span class="req">*</span>
               </label>
            
-              <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmus_email}"   />
+              <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmusEmail}"   />
             </div>
             <div class="field-wrap">
                     <label>
                       Telephone<span class="req">*</span>
                     </label>
-                    <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmus_tel}" />
+                    <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmusTel}" />
                   </div>
                   <div >
                         <h4><script type= "text/javascript"src = "/js/countries.js"></script>
                         Select Country: <span class="req">*</span> 
-                         <select id="country" name ="country" type="text" required autocomplete="off" style="font-size:20px;"></select> 
+                         <select id="country" name ="erasmusCountry" type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmusCountry}" style="font-size:20px;"></select> 
+                        
+                        
                         </h4>
                     </div>
                     
@@ -176,20 +178,20 @@ xmlns:th="http://www.thymeleaf.org">
                     <label>
                       University<span class="req">*</span>
                     </label>
-                    <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmus_uni}" />
+                    <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmusUni}" />
                   </div>
                   
                   <div class="field-wrap">
                         <label>
                           Studies<span class="req">*</span>
                         </label>
-                        <input type="text" required autocomplete="off" />
+                        <input type="text" required autocomplete="off" th:field="*{erasmusInfo.erasmusStudies}" />
                       </div>
 
                       <div>
                         <h4><script type= "text/javascript" src = "/js/faculty_agh.js"></script>
                         Select Faculty at AGH: <span class="req">*</span> 
-                         <select id="faculty" name ="faculty" type="text"required autocomplete="off" ></select> 
+                         <select id="faculty" name ="erasmusFacultyAGH" type="text"required autocomplete="off" th:field="*{erasmusInfo.erasmusFacultyAGH}" ></select> 
                         </h4>
                     </div>
                     

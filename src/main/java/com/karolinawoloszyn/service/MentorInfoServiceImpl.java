@@ -22,15 +22,15 @@ public class MentorInfoServiceImpl implements MentorInfoService {
 		if(mentorInfoOptional.isPresent()) {
 			//UPDATE
 			MentorInfo mentorInfoFromDb = mentorInfoOptional.get();
-			mentorInfoFromDb.setMentor_name(mentorInfo.getMentor_name());
-			mentorInfoFromDb.setMentor_surname(mentorInfo.getMentor_surname());
-			mentorInfoFromDb.setMentor_email(mentorInfo.getMentor_email());
-			mentorInfoFromDb.setMentor_gender(mentorInfo.getMentor_gender());
-			mentorInfoFromDb.setMentor_uni(mentorInfo.getMentor_uni());
-			mentorInfoFromDb.setMentor_tel(mentorInfo.getMentor_tel());
-			mentorInfoFromDb.setMentor_studies(mentorInfo.getMentor_studies());
-			mentorInfoFromDb.setMentor_facultyAGH(mentorInfo.getMentor_facultyAGH());
-			mentorInfoFromDb.setMentor_countryOfErasmus(mentorInfo.getMentor_countryOfErasmus());
+			mentorInfoFromDb.setMentorName(mentorInfo.getMentorName());
+			mentorInfoFromDb.setMentorSurname(mentorInfo.getMentorSurname());
+			mentorInfoFromDb.setMentorEmail(mentorInfo.getMentorEmail());
+			mentorInfoFromDb.setMentorGender(mentorInfo.getMentorGender());
+			mentorInfoFromDb.setMentorUni(mentorInfo.getMentorUni());
+			mentorInfoFromDb.setMentorTel(mentorInfo.getMentorTel());
+			mentorInfoFromDb.setMentorStudies(mentorInfo.getMentorStudies());
+			mentorInfoFromDb.setMentorFacultyAGH(mentorInfo.getMentorFacultyAGH());
+			mentorInfoFromDb.setMentorCountryOfErasmus(mentorInfo.getMentorCountryOfErasmus());
 			//TODO copy the remaining fields
 			return mentorInfoRepository.save(mentorInfoFromDb);
 		}else {
