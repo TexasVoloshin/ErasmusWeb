@@ -8,15 +8,26 @@ body{
 }
 h2{
     font-family: 'Barlow', sans-serif;
-    font-size:40px;
+    font-size:30px;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+a{
+    font-family: 'Barlow', sans-serif;
+    text-transform: uppercase;
+    font-size:20px;
+    margin: 0;
+    padding: 20px;
+    display: inline-block;
 }
 
 .container{
     max-width: 1000px ;
     margin: 0 auto;
 }
+
  header{
      width: 100%;
      height: 90px ;
@@ -78,7 +89,8 @@ ul li2 a:hover{
     float: center;
      justify-content: space-around;
      width: 100%;
-     height: 500px;
+     height: 100%;
+     min-height: 550px;
      background-image: url(tlo2.jpg);
      background-size: cover;
      background-position: center;
@@ -89,6 +101,31 @@ ul li2 a:hover{
  .item{flex-shrink: 0;
     flex-grow: 1;
  }
+ .button {
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: Barlow;
+ /*    letter-spacing: .1em; */
+    background: #191cb1;
+    color: white;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+  }
+  
+  #outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
  
  /* .hero-slogan{
      /* margin: 20vh auto; */
@@ -198,6 +235,7 @@ footer p{
 }
 table{ 
   font-family: 'Barlow', sans-serif;
+  padding:10px;
    border: 1px solid #0d03c1;
   border-spacing: 1; 
   border-collapse: collapse; 

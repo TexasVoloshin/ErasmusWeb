@@ -34,7 +34,7 @@ xmlns:th="http://www.thymeleaf.org">
 <main>
     <section class="hero">
             <div class="container">  
-                    <form id="contact" action="action="https://formspree.io/kina43@gmail.com"" method="post">
+                    <form id="contact" action=@{/contact} method="post">
                       <h3>ESN Mentor Programme Contact Form</h3>
                       <h4>Contact us for custom quote</h4>
                       <fieldset>
@@ -53,6 +53,8 @@ xmlns:th="http://www.thymeleaf.org">
                         <button class= "submit" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                       </fieldset>
                       <div class ='status'>
+                     <!--  <a>Your message has been sent!</a>
+                       -->
                       </div>
                       <p class="copyright">Designed by <a href="https://agh.esn.pl" target="_blank" title="ESN AGH">ESN AGH</a></p>
                     </form>

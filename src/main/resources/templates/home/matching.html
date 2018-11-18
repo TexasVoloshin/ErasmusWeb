@@ -26,7 +26,7 @@ xmlns:th="http://www.thymeleaf.org">
        </div> 
        <div class="menu">
            <ul>
-                       <li><a  th:href="@{/home/home}">HOME</a></li>
+                       <li><a th:href="@{/home/home}">HOME</a></li>
                 <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
                <li><a th:href="@{/contact}">CONTACT</a></li>
                <li><a th:href="@{/logout}">LOGOUT</a></li>
@@ -38,18 +38,67 @@ xmlns:th="http://www.thymeleaf.org">
 <main>
     <section class="hero">
             <div class="container">
+                    <h2>List of matched students</h2>
+                    <div>
+                  <table border="1">
+		<thead>
+			<tr>
+				<th>Mentor name</th>
+				<th>Mentor lastname</th>
+				<th>Erasmus name</th>
+				<th>Erasmus lastname</th>
+			</tr>
+		</thead>
+		<tbody>
+	 	<th:block th:each="user : ${allErasmus}">
+				<tr>
+					<td><span th:text="${user.firstname}"/></td>
+					<td><span th:text="${user.lastname}"/></td>
+					<td><span th:text="${user.firstname}"/></td>
+					<td><span th:text="${user.lastname}"/></td>
+              
+				</tr>
+			</th:block> 
+		</tbody>
+	</table>  </div>
                   
-                 
                    </div>
                     </div>
-           
-                             
+                    
+                    
+                   
+           <ul>
+           <li><h2 >Erasmus student</h2></li>
+           <li><h2 > <h2 >Mentor students</h2></li>
+           </ul>
                               
-
+ <ul>                             
+<li><table border="1">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Email</th>
+				<th>Role</th>
+			</tr>
+		</thead>
+		<tbody>
+	 	<th:block th:each="user : ${allErasmus}">
+				<tr>
+					<td><span th:text="${user.firstname}"/></td>
+					<td><span th:text="${user.lastname}"/></td>
+					<td> <span th:text="${user.email}"/></td>
+					   <td th:text="${user.roleNames}"></td>
+              
+				</tr>
+			</th:block> 
+		</tbody>
+	</table>
           </div>
-           
+          </li> 
+          <li>
            <div>
-	<h2>All registered erasmus and mentors</h2>
+	
 	<table border="1">
 		<thead>
 			<tr>
@@ -60,7 +109,7 @@ xmlns:th="http://www.thymeleaf.org">
 			</tr>
 		</thead>
 		<tbody>
-			<th:block th:each="user : ${allUsers}">
+	 	<th:block th:each="user : ${allErasmus}">
 				<tr>
 					<td><span th:text="${user.firstname}"/></td>
 					<td><span th:text="${user.lastname}"/></td>
@@ -68,14 +117,18 @@ xmlns:th="http://www.thymeleaf.org">
 					   <td th:text="${user.roleNames}"></td>
               
 				</tr>
-			</th:block>
+			</th:block> 
 		</tbody>
 	</table>
 </div>
-  
+  </li>
+  </ul>
 
-            
+          <div>
+         <a class="button">Match Erasmuses and Mentors </a>
+                  </div>    
                   
+                   
   
     </section>
     

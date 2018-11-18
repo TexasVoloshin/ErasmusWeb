@@ -1,6 +1,7 @@
 package com.karolinawoloszyn.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -64,4 +65,17 @@ public class UserServiceImpl implements UserService {
  }
 
 
+ /*@Override
+ @Query(value = "SELECT *\r\n" + 
+	  		"  FROM `Erasmus`.`user` EU LEFT JOIN `Erasmus`.`user_role` ER ON  EU.id =  ER.user_id\r\n" + 
+	  		"  where ER.role_id = 3\r\n" + 
+	  		" ", 
+	  nativeQuery = true)
+ 
+   public List<User> findAllErasmusOrderedByNameDescending() {
+ 
+     List<User> user = (List<User>) userRepository.findAllErasmusOrderedByNameDescending(String firstName, String LastName, String Role);
+     return user;
+ }*/
+ 
 }

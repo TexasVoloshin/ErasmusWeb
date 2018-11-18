@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import com.karolinawoloszyn.service.EmailSender;
+import com.karolinawoloszyn.service.EmailService;
 
 @Controller
 public class EmailController {
 
-    private final EmailSender emailSender;
+    private final EmailService emailService;
     private final TemplateEngine templateEngine;
 
     @Autowired
-    public EmailController(EmailSender emailSender,
+    public EmailController(EmailService emailSender,
                            TemplateEngine templateEngine){
-        this.emailSender = emailSender;
+        this.emailService = emailSender;
         this.templateEngine = templateEngine;
     }
 
@@ -29,7 +29,7 @@ public class EmailController {
         context.setVariable("description", "Tutaj bedzie wczytana tresc wiadomosci ");
 
         String body = templateEngine.process("template", context);
-        emailSender.sendEmail("erasmusmentor@outlook.com", "Erasmus-Mentor Request", body);
-        return "index";
+        emailService.sendEmail("erasmusmentor@outlook.com", "Erasmus-Mentor Request", body);
+        return "your message has been sent";
     }
 }

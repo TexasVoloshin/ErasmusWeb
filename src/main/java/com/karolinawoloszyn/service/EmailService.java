@@ -1,5 +1,5 @@
 package com.karolinawoloszyn.service;
 
-public interface EmailSender {
+public interface EmailService {
     void sendEmail(String to, String subject, String content);
 }

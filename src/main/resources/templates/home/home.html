@@ -41,9 +41,10 @@ xmlns:th="http://www.thymeleaf.org">
             <div class="container">
                     <h2>Hi <span th:utext="${userFirstname}"></span>! Let the adventure begin!</h2>
             
-            <a th:if="${userRoles.contains('ERASMUS')}" th:href="@{/application_form}" >APPLY FOR MENTOR</a>
-            <a th:if="${userRoles.contains('MENTOR')}" th:href="@{/assign_erasmus}">ASSIGN ERASMUS</a>
-            <a th:if="${userRoles.contains('ADMIN')}" th:href="@{/home/admin}">List of registered Erasmuses and Mentors </a>
+            <a th:if="${userRoles.contains('ERASMUS')}" th:href="@{/application_form}" class="button">APPLY FOR MENTOR</a>
+            <a th:if="${userRoles.contains('MENTOR')}" th:href="@{/assign_erasmus}" class="button">ASSIGN ERASMUS</a>
+        <a th:if="${userRoles.contains('ADMIN')}" th:href="@{/home/admin}" class="button">List of registered Erasmuses and Mentors </a>
+        <a th:if="${userRoles.contains('ADMIN')}" th:href="@{/home/admin/matching}" class="button">Assign new pairs </a>
 
             <div>
                               <h2 >All your details</h2>
@@ -51,8 +52,8 @@ xmlns:th="http://www.thymeleaf.org">
 <table border="1" >
 <thead>
     <tr>
-       <th>Firstname</th>
-        <th>Lastname</th>
+       <th>First name</th>
+        <th>Last name</th>
          <th>Email</th>
          	<th>Role</th>
     </tr>

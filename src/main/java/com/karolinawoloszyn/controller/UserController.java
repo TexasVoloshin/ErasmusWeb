@@ -1,11 +1,14 @@
 package com.karolinawoloszyn.controller;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import org.hibernate.criterion.Example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,7 +22,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
+import com.karolinawoloszyn.repository.RoleRespository;
 import com.karolinawoloszyn.service.UserService;
 
 @Controller
@@ -167,6 +172,31 @@ public class UserController {
   model.setViewName("home/admin");
   return model;
  }
+ 
+ @Autowired
+ private RoleRespository roleRespository;
+ 
+ @SuppressWarnings("unlikely-arg-type")
+ 
+@RequestMapping(value= {"/home/admin/matching"}, method=RequestMethod.GET)
+ public ModelAndView matchingResult() {
+
+  ModelAndView model = new ModelAndView();
+  
+  Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+  User user = userService.findUserByEmail(auth.getName());
+  model.addObject("userFirstname", user.getFirstname());
+  model.addObject("userLastname", user.getLastname());
+  model.addObject("userEmail", user.getEmail());
+  model.addObject("userRoles", user.getRoleNames());
+ 
+  List<User> allErasmus = userService.findAllOrderedByNameDescending();
+  model.addObject("allErasmus", allErasmus);
+  model.setViewName("home/matching");
+  return model;
+ }
+ 
+ 
  @RequestMapping(value= {"/access_denied"}, method=RequestMethod.GET)
  public ModelAndView accessDenied() {
   ModelAndView model = new ModelAndView();
@@ -193,13 +223,14 @@ public class UserController {
  }*/
   @GetMapping("/showUserList")
   public String findAllOrderedByNameDescending(Model model) {
-      
+	  
       List<User> users = (List<User>) userService.findAllOrderedByNameDescending();
       
       model.addAttribute("users", users);
       
       return "userDetails";
   }
+  
   @RequestMapping(value= {"/admin"}, method=RequestMethod.GET)
   public ModelAndView adminView() {
    ModelAndView modelAndView = new ModelAndView();
