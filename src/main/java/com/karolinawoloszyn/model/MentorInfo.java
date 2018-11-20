@@ -1,22 +1,19 @@
 
 package com.karolinawoloszyn.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "mentorinfo")
+@NamedQuery(name = "MentorInfo.findAllUnpaired", 
+query = "SELECT e FROM MentorInfo e WHERE NOT EXISTS (SELECT pm FROM PerfectMatch pm where pm.mentor = e ) ORDER BY e.mentorSurname ASC")
 
 public class MentorInfo {
 

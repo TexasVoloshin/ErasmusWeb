@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.karolinawoloszyn.model.ErasmusInfo;
+import com.karolinawoloszyn.model.MentorInfo;
 import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
 import com.karolinawoloszyn.repository.ErasmusInfoRepository;
+import com.karolinawoloszyn.repository.MentorInfoRepository;
 import com.karolinawoloszyn.repository.RoleRespository;
 import com.karolinawoloszyn.repository.UserRepository;
 import java.util.Arrays;
@@ -26,6 +28,9 @@ public class UserServiceImpl implements UserService {
  
  @Autowired
  private ErasmusInfoRepository erasmusInfoRepository;
+ 
+ @Autowired
+ private MentorInfoRepository mentorInfoRepository;
  
  
  @Autowired
@@ -72,6 +77,10 @@ public class UserServiceImpl implements UserService {
 @Override
 public List<ErasmusInfo> findUnpairedErasmusStudents() {
 	return erasmusInfoRepository.findAllUnpaired();
+}
+@Override
+public List<MentorInfo> findUnpairedMentors() {
+	return mentorInfoRepository.findAllUnpaired();
 }
 
 
