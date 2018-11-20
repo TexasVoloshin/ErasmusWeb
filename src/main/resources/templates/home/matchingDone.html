@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl" 
+xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/style_home.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:200,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+    <!-- <script src="jquery/arrowspin.js"></script> -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">-->
+
+</head>
+
+<body>
+    <header>
+       <div class="logo">
+         
+                <img src="/images/ESN-white.png"  alt="logo">
+          
+       </div> 
+       <div class="menu">
+           <ul>
+               <li><a th:href="@{/home/home}">HOME</a></li>
+               <li><a href="https://agh.esn.pl/">ESN AGH</a></li>
+               <li><a th:href="@{/contact}">CONTACT</a></li>
+               <li><a th:href="@{/logout}">LOGOUT</a></li>
+               
+            </ul>
+       </div>
+       <div class="clear"></div>
+    </header>
+<main>
+    <section class="hero">
+            <div class="container">
+                    <h2>Erasmus-Mentor matching has been finished!</h2>
+            
+         
+           
+           
+    <div>
+      
+          <a  class="button .button3" th:href="@{/notification}">Send email notification to Mentors-Erasmus pairs</a>
+                  </div>
+    
+        <div class="clear"></div>  
+  
+    </section>
+    
+    </section>
+</main>
+    <footer>
+        <p>© 2018 Copyright. Karolina Wołoszyn</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>

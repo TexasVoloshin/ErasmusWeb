@@ -48,6 +48,15 @@ public class PerfectMatchController {
    
     return model;
    }
+  @RequestMapping(value= {"/home/admin/matchingDone"}, method=RequestMethod.GET)
+  public ModelAndView matchErasmusToMentorDone() {
+   ModelAndView model = new ModelAndView();
+   PerfectMatch perfectMatch = new PerfectMatch();
+   model.addObject("perfectMatch", perfectMatch);
+   model.setViewName("matchingDone");
+  
+   return model;
+  }
 /*
   @RequestMapping(value = {"/home/admin/matching"}, method = RequestMethod.POST)
 	public ModelAndView matchSubmit(@ModelAttribute PerfectMatch perfectMatch) {
