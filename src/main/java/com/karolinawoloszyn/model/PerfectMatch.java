@@ -2,35 +2,51 @@ package com.karolinawoloszyn.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "erasmus_mentor_match")
-
 public class PerfectMatch {
+	
 	@Id
-	@Column(name = "mentor_id")
-	private int mentorId;
+	@Column(name = "id")
+	private int id;
 
-	public int getMentorId() {
-		return mentorId;
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "erasmus_id")
+	private ErasmusInfo erasmus;
+
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "mentor_id")
+	private MentorInfo mentor;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setMentorId(int mentorId) {
-		this.mentorId = mentorId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public int getErasmusId() {
-		return erasmusId;
+	public ErasmusInfo getErasmus() {
+		return erasmus;
 	}
 
-	public void setErasmusId(int erasmusId) {
-		this.erasmusId = erasmusId;
+	public void setErasmus(ErasmusInfo erasmus) {
+		this.erasmus = erasmus;
 	}
 
-	@Column(name = "erasmus_id")
-	private int erasmusId;
+	public MentorInfo getMentor() {
+		return mentor;
+	}
+
+	public void setMentor(MentorInfo mentor) {
+		this.mentor = mentor;
+	}
 
 }

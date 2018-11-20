@@ -12,12 +12,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "erasmusinfo")
-
+@NamedQuery(name = "ErasmusInfo.findAllUnpaired", 
+query = "SELECT e FROM ErasmusInfo e WHERE NOT EXISTS (SELECT pm FROM PerfectMatch pm where pm.erasmus = e ) ORDER BY e.erasmusSurname ASC")
 public class ErasmusInfo {
 
 	@Id

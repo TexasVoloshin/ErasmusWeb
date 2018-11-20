@@ -22,9 +22,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.karolinawoloszyn.model.ErasmusInfo;
+import com.karolinawoloszyn.model.PerfectMatch;
 import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
 import com.karolinawoloszyn.repository.RoleRespository;
+import com.karolinawoloszyn.service.MatchingService;
 import com.karolinawoloszyn.service.UserService;
 
 @Controller
@@ -176,20 +179,23 @@ public class UserController {
  @Autowired
  private RoleRespository roleRespository;
  
+ @Autowired
+ private MatchingService matchingService;
+ 
  @SuppressWarnings("unlikely-arg-type")
  
 @RequestMapping(value= {"/home/admin/matching"}, method=RequestMethod.GET)
  public ModelAndView matchingResult() {
 
   ModelAndView model = new ModelAndView();
-  
   Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-  User user = userService.findUserByEmail(auth.getName());
-  model.addObject("userFirstname", user.getFirstname());
-  model.addObject("userLastname", user.getLastname());
-  model.addObject("userEmail", user.getEmail());
-  model.addObject("userRoles", user.getRoleNames());
  
+  List<PerfectMatch> matchedPairs = matchingService.findAll();
+  model.addObject("matchedErasmusMentorPairs", matchedPairs);
+  
+  List<ErasmusInfo> unpairedErasmusStudents = userService.findUnpairedErasmusStudents();
+  model.addObject("unpairedErasmusStudents", unpairedErasmusStudents);
+  
   List<User> allErasmus = userService.findAllOrderedByNameDescending();
   model.addObject("allErasmus", allErasmus);
   model.setViewName("home/matching");

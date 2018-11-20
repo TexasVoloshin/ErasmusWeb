@@ -82,9 +82,11 @@ COMMENT = 'Table contains personal information about Mentor Student ';
 
 DROP TABLE IF EXISTS `Erasmus`.`erasmus_mentor_match`;
 CREATE TABLE `Erasmus`.`erasmus_mentor_match` (
+`id` int(11) NOT NULL auto_increment,
 `mentor_id` int(11) NOT NULL,
 `erasmus_id` int(11) NOT NULL,
- PRIMARY KEY (`mentor_id`,`erasmus_id`),
+ PRIMARY KEY (`id`), 
+ UNIQUE KEY (`mentor_id`,`erasmus_id`),
  CONSTRAINT `mantor_matching_id` FOREIGN KEY (`mentor_id`) REFERENCES `Erasmus`.`mentorinfo` (`user_id`),
  CONSTRAINT `erasmus_matching_id` FOREIGN KEY (`erasmus_id`) REFERENCES `Erasmus`.`erasmusinfo` (`user_id`)
 )
@@ -96,3 +98,4 @@ INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
 INSERT INTO `Erasmus`.`role` VALUES (2,'ERASMUS');
 INSERT INTO `Erasmus`.`role` VALUES (3,'MENTOR');
 
+useruser_role

@@ -43,19 +43,27 @@ xmlns:th="http://www.thymeleaf.org">
                   <table border="1">
 		<thead>
 			<tr>
-				<th>Mentor name</th>
-				<th>Mentor lastname</th>
-				<th>Erasmus name</th>
-				<th>Erasmus lastname</th>
+				<th>Mentor first name</th>
+				<th>Mentor last name</th>
+				<th>Mentor country</th>
+				<th></th>
+				<th>Erasmus first name</th>
+				<th>Erasmus last name</th>
+				<th>Erasmus country</th>
 			</tr>
 		</thead>
 		<tbody>
-	 	<th:block th:each="user : ${allErasmus}">
+	 	<th:block th:each="pair : ${matchedErasmusMentorPairs}">
 				<tr>
-					<td><span th:text="${user.firstname}"/></td>
-					<td><span th:text="${user.lastname}"/></td>
-					<td><span th:text="${user.firstname}"/></td>
-					<td><span th:text="${user.lastname}"/></td>
+					<td><span th:text="${pair.erasmus.erasmusName}"/></td>
+					<td><span th:text="${pair.erasmus.erasmusSurname}"/></td>
+					<td><span th:text="${pair.erasmus.erasmusCountry}"/></td>
+					
+					<td></td>
+					<td><span th:text="${pair.mentor.mentorName}"/></td>
+					<td><span th:text="${pair.mentor.mentorSurname}"/></td>
+					<td><span th:text="${pair.mentor.mentorCountryOfErasmus}"/></td>
+					
               
 				</tr>
 			</th:block> 
@@ -79,16 +87,16 @@ xmlns:th="http://www.thymeleaf.org">
 				<th>First name</th>
 				<th>Last name</th>
 				<th>Email</th>
-				<th>Role</th>
+				<th>Country</th>
 			</tr>
 		</thead>
 		<tbody>
-	 	<th:block th:each="user : ${allErasmus}">
+	 	<th:block th:each="user : ${unpairedErasmusStudents}">
 				<tr>
-					<td><span th:text="${user.firstname}"/></td>
-					<td><span th:text="${user.lastname}"/></td>
-					<td> <span th:text="${user.email}"/></td>
-					   <td th:text="${user.roleNames}"></td>
+					<td><span th:text="${user.erasmusName}"/></td>
+					<td><span th:text="${user.erasmusSurname}"/></td>
+					<td> <span th:text="${user.erasmusEmail}"/></td>
+					<td> <span th:text="${user.erasmusCountry}"/></td>
               
 				</tr>
 			</th:block> 

@@ -6,8 +6,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.karolinawoloszyn.model.ErasmusInfo;
 import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
+import com.karolinawoloszyn.repository.ErasmusInfoRepository;
 import com.karolinawoloszyn.repository.RoleRespository;
 import com.karolinawoloszyn.repository.UserRepository;
 import java.util.Arrays;
@@ -21,6 +23,10 @@ public class UserServiceImpl implements UserService {
  
  @Autowired
  private UserRepository userRepository;
+ 
+ @Autowired
+ private ErasmusInfoRepository erasmusInfoRepository;
+ 
  
  @Autowired
  private RoleRespository roleRespository;
@@ -63,6 +69,10 @@ public class UserServiceImpl implements UserService {
      List<User> user = (List<User>) userRepository.findAllOrderedByNameDescending();
      return user;
  }
+@Override
+public List<ErasmusInfo> findUnpairedErasmusStudents() {
+	return erasmusInfoRepository.findAllUnpaired();
+}
 
 
  /*@Override
