@@ -1,5 +1,9 @@
 package com.karolinawoloszyn.service;
 
-public interface MatchingService {
+import java.util.List;
 
+import com.karolinawoloszyn.model.PerfectMatch;
+
+public interface MatchingService {
+	public List<PerfectMatch> findAll();
 }
