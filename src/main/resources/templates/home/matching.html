@@ -113,16 +113,16 @@ xmlns:th="http://www.thymeleaf.org">
 				<th>First name</th>
 				<th>Last name</th>
 				<th>Email</th>
-				<th>Role</th>
+				<th>Country</th>
 			</tr>
 		</thead>
 		<tbody>
-	 	<th:block th:each="user : ${allErasmus}">
+	 	<th:block th:each="user : ${unpairedMentors}">
 				<tr>
-					<td><span th:text="${user.firstname}"/></td>
-					<td><span th:text="${user.lastname}"/></td>
-					<td> <span th:text="${user.email}"/></td>
-					   <td th:text="${user.roleNames}"></td>
+					<td><span th:text="${user.mentorName}"/></td>
+					<td><span th:text="${user.mentorSurname}"/></td>
+					<td> <span th:text="${user.mentorEmail}"/></td>
+					<td> <span th:text="${user.mentorCountryOfErasmus}"/></td>
               
 				</tr>
 			</th:block> 
@@ -133,17 +133,17 @@ xmlns:th="http://www.thymeleaf.org">
   </ul>
 
           <div>
-<<<<<<< HEAD
-         <a class="button .button2">Match Erasmuses and Mentors </a>
-          <a  class="button .button3" th:href="@{/notification}">Send email notification to Mentors and Erasmus students</a>
-=======
-         <a class="button">Match Erasmuses and Mentors </a>
-         <form method="POST" th:action="@{/home/admin/assign_pairs}">
-    		<button type="submit" name="submit" value="value" class="button">Assign pairs</button>
+
+       <!--   <a class="button .button2">Match Erasmuses and Mentors </a> -->
+        <a  class="button .button3" th:href="@{/notification}">Send email notification to Mentors and Erasmus students</a>
+ 
+       <!--   <a class="button">Match Erasmuses and Mentors </a> -->
+         <form method="POST" th:action="@{/home/admin/assign_pairs}" th:href="@{/home/admin/matching}">
+    		<button type="submit" name="submit" value="value" class="button" >Assign pairs</button>
 		</form> 
          
          
->>>>>>> edb4b635ab2c82d889547d5b0b5044c5e14f00c5
+
                   </div>    
                   
                    

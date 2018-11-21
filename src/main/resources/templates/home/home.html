@@ -70,31 +70,35 @@ xmlns:th="http://www.thymeleaf.org">
 </table>
           </div>
            
-          <!-- 
-           <div>
-	<h2>All registered erasmus and mentors</h2>
-	<table border="1">
+      <table border="1">
 		<thead>
 			<tr>
-				<th>Firstname</th>
-				<th>Lastname</th>
-				<th>Email</th>
+				<th>Mentor first name</th>
+				<th>Mentor last name</th>
+				<th>Mentor country</th>
+				<th></th>
+				<th>Erasmus first name</th>
+				<th>Erasmus last name</th>
+				<th>Erasmus country</th>
 			</tr>
 		</thead>
 		<tbody>
-			<th:block th:each="user : ${allUsers}">
+	 	<th:block th:each="pair : ${matchedErasmusMentorPairs}">
 				<tr>
-					<td><span th:text="${user.firstname}"/></td>
-					<td><span th:text="${user.lastname}"/></td>
-					<td> <span th:text="${user.email}"/></td>
+					<td><span th:text="${pair.userName}"/></td>
+					<td><span th:text="${pair.erasmus.userSurname}"/></td>
+					<td><span th:text="${pair.erasmus.userCountry}"/></td>
+					
+					<td></td>
+					<td><span th:text="${pair.mentor.mentorName}"/></td>
+					<td><span th:text="${pair.mentor.mentorSurname}"/></td>
+					<td><span th:text="${pair.mentor.mentorCountryOfErasmus}"/></td>
+					
+              
 				</tr>
-			</th:block>
+			</th:block> 
 		</tbody>
-	</table>
-</div> 
-          -->  
-           
-           
+	</table> 
     
     
         <div class="clear"></div>  

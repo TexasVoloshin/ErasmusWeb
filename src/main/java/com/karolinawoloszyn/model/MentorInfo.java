@@ -36,11 +36,10 @@ public class MentorInfo {
 	@Column(name = "mentor_gender")
 	private String mentorGender;
 
-	@Column(name = "mentor_countryOfErasmus")
+	@Column(name = "mentor_country_of_erasmus")
 	private String mentorCountryOfErasmus;
 
-	@Column(name = "mentor_uni")
-	private String mentorUni;
+	
 
 	@Column(name = "mentor_studies")
 	private String mentorStudies;
@@ -123,13 +122,7 @@ public class MentorInfo {
 		this.mentorCountryOfErasmus = mentorCountryOfErasmus;
 	}
 
-	public String getMentorUni() {
-		return mentorUni;
-	}
-
-	public void setMentorUni(String mentorUni) {
-		this.mentorUni = mentorUni;
-	}
+	
 
 	public String getMentorStudies() {
 		return mentorStudies;
@@ -166,7 +159,7 @@ public class MentorInfo {
 	@Override
 	public String toString() {
 		return String.format("Customer[userId=%d, mentor_name='%s', mentor_surname='%s', mentor_email='%s', mentor_gender='%s',  mentor_uni='%s', mentor_tel='%s', mentor_studies='%s',  mentor_countryOfErasmus='%s',  mentor_facultyAGH='%s']", userId,
-				mentorName, mentorSurname, mentorEmail, mentorGender,  mentorUni, mentorTel, mentorStudies,  mentorCountryOfErasmus,  mentorFacultyAGH);
+				mentorName, mentorSurname, mentorEmail, mentorGender, mentorTel, mentorStudies,  mentorCountryOfErasmus,  mentorFacultyAGH);
 	}
 
 	/*

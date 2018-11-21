@@ -71,7 +71,7 @@ CREATE TABLE `Erasmus`.`mentorinfo` (
   `mentor_email` VARCHAR(255) NULL,
   `mentor_tel` VARCHAR(255) NULL,
   `mentor_studies` VARCHAR(255) NULL,
-  `mentor_countryOfErasmus` VARCHAR(255) NULL,
+  `mentor_country_of_erasmus` VARCHAR(255) NULL,
   `mentor_facultyAGH` VARCHAR(255) NULL,
   `ESN_member` CHAR(3) NULL,
   PRIMARY KEY (`user_id`),
@@ -97,5 +97,3 @@ COMMENT = 'hold pairs of Erasmus and Mentor';
 INSERT INTO `Erasmus`.`role` VALUES (1,'ADMIN');
 INSERT INTO `Erasmus`.`role` VALUES (2,'ERASMUS');
 INSERT INTO `Erasmus`.`role` VALUES (3,'MENTOR');
-
-useruser_role

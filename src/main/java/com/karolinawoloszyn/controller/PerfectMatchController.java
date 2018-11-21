@@ -9,7 +9,10 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -49,38 +52,7 @@ public class PerfectMatchController {
  
    
    
-<<<<<<< HEAD
-  @RequestMapping(value= {"/home/admin/matching"}, method=RequestMethod.GET)
-   public ModelAndView matchErasmusToMentor() {
-    ModelAndView model = new ModelAndView();
-    PerfectMatch perfectMatch = new PerfectMatch();
-    model.addObject("perfectMatch", perfectMatch);
-    model.setViewName("home/perfectMatch");
-   
-    return model;
-   }
-  @RequestMapping(value= {"/home/admin/matchingDone"}, method=RequestMethod.GET)
-  public ModelAndView matchErasmusToMentorDone() {
-   ModelAndView model = new ModelAndView();
-   PerfectMatch perfectMatch = new PerfectMatch();
-   model.addObject("perfectMatch", perfectMatch);
-   model.setViewName("matchingDone");
-  
-   return model;
-  }
-/*
-  @RequestMapping(value = {"/home/admin/matching"}, method = RequestMethod.POST)
-	public ModelAndView matchSubmit(@ModelAttribute PerfectMatch perfectMatch) {
-		ModelAndView model = new ModelAndView();
-
-		SecurityContext securityContext = SecurityContextHolder.getContext();
-		String email = securityContext.getAuthentication().getName();
-		String country=
-		
-		MentorId mentorId = matchingService.findUserByEmail(email);
-		perfectMatch.setMentorId(mentorId);
-		perfectMatch = matchingService.saveMach(perfectMatch);
-=======
+//
 //  @RequestMapping(value= {"/home/admin/matching"}, method=RequestMethod.GET)
 //   public ModelAndView matchErasmusToMentor() {
 //    ModelAndView model = new ModelAndView();
@@ -89,8 +61,40 @@ public class PerfectMatchController {
 //    model.setViewName("home/perfectMatch");
 //   
 //    return model;
-//   }
->>>>>>> edb4b635ab2c82d889547d5b0b5044c5e14f00c5
+//  }
+ /* @RequestMapping(value= {"/home/admin/matchingDone"}, method=RequestMethod.GET)
+  public ModelAndView matchErasmusToMentorDone() {
+   ModelAndView model = new ModelAndView();
+   PerfectMatch perfectMatch = new PerfectMatch();
+   model.addObject("perfectMatch", perfectMatch);
+   model.setViewName("matchingDone");
+  
+   return model;
+  }*/
+
+
+//  @RequestMapping(value = {"/home/admin/matching"}, method = RequestMethod.POST)
+//	public ModelAndView matchSubmit(@ModelAttribute PerfectMatch perfectMatch) {
+//		ModelAndView model = new ModelAndView();
+//
+//		SecurityContext securityContext = SecurityContextHolder.getContext();
+//		String email = securityContext.getAuthentication().getName();
+//		String country=
+//		
+//		MentorId mentorId = matchingService.findUserByEmail(email);
+//		perfectMatch.setMentorId(mentorId);
+//		perfectMatch = matchingService.saveMach(perfectMatch);
+//  }	
+
+ /* @RequestMapping(value= {"/home/admin/matching"}, method=RequestMethod.GET)
+   public ModelAndView matchErasmusToMentor() {
+    ModelAndView model = new ModelAndView();
+    PerfectMatch perfectMatch = new PerfectMatch();
+    model.addObject("perfectMatch", perfectMatch);
+    model.setViewName("home/perfectMatch");
+   
+    return model;
+  }*/
 
    
   @RequestMapping(value = {"/home/admin/assign_pairs"}, method = RequestMethod.POST)
@@ -136,20 +140,19 @@ public class PerfectMatchController {
 	  
 	  
 	  return userController.matchingResult();
-	  
-//		ModelAndView model = new ModelAndView();
-//
-//		SecurityContext securityContext = SecurityContextHolder.getContext();
-//		String email = securityContext.getAuthentication().getName();
-//		String country=
-//		
-//		MentorId mentorId = matchingService.findUserByEmail(email);
-//		perfectMatch.setMentorId(mentorId);
-//		perfectMatch = matchingService.saveMach(perfectMatch);
-//
-//		model.addObject("perfectMatch", perfectMatch);
-//		model.setViewName("home/matching");
-//		return model;
+  
+	   /*ModelAndView model = new ModelAndView();
+		SecurityContext securityContext = SecurityContextHolder.getContext();
+		String email = securityContext.getAuthentication().getName();
+		String country=
+		
+		MentorId mentorId = matchingService.findUserByEmail(email);
+	    perfectMatch.setMentorId(mentorId);
+		perfectMatch = matchingService.saveMach(perfectMatch);
+
+		model.addObject("perfectMatch", perfectMatch);
+		model.setViewName("home/matching");
+		return model;*/
 	}
   
   private void savePairByCountry(ErasmusInfo erasmusInfo, Map<String, MentorInfo> mentorInfoMap) {
@@ -175,4 +178,4 @@ public class PerfectMatchController {
 	  perfectMatchRepository.save(perfectMatch);
   }
  
-}
+} 

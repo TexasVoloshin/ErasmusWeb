@@ -23,6 +23,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.karolinawoloszyn.model.ErasmusInfo;
+import com.karolinawoloszyn.model.MentorInfo;
 import com.karolinawoloszyn.model.PerfectMatch;
 import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
@@ -195,6 +196,9 @@ public class UserController {
   
   List<ErasmusInfo> unpairedErasmusStudents = userService.findUnpairedErasmusStudents();
   model.addObject("unpairedErasmusStudents", unpairedErasmusStudents);
+  
+  List<MentorInfo> unpairedMentors = userService.findUnpairedMentors();
+  model.addObject("unpairedMentors", unpairedMentors);
   
   List<User> allErasmus = userService.findAllOrderedByNameDescending();
   model.addObject("allErasmus", allErasmus);

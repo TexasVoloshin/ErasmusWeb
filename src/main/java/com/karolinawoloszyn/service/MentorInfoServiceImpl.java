@@ -26,7 +26,7 @@ public class MentorInfoServiceImpl implements MentorInfoService {
 			mentorInfoFromDb.setMentorSurname(mentorInfo.getMentorSurname());
 			mentorInfoFromDb.setMentorEmail(mentorInfo.getMentorEmail());
 			mentorInfoFromDb.setMentorGender(mentorInfo.getMentorGender());
-			mentorInfoFromDb.setMentorUni(mentorInfo.getMentorUni());
+			
 			mentorInfoFromDb.setMentorTel(mentorInfo.getMentorTel());
 			mentorInfoFromDb.setMentorStudies(mentorInfo.getMentorStudies());
 			mentorInfoFromDb.setMentorFacultyAGH(mentorInfo.getMentorFacultyAGH());
