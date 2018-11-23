@@ -27,6 +27,7 @@ import com.karolinawoloszyn.model.MentorInfo;
 import com.karolinawoloszyn.model.PerfectMatch;
 import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
+import com.karolinawoloszyn.repository.PerfectMatchRepository;
 import com.karolinawoloszyn.repository.RoleRespository;
 import com.karolinawoloszyn.service.MatchingService;
 import com.karolinawoloszyn.service.UserService;
@@ -36,7 +37,9 @@ public class UserController {
 
  @Autowired
  private UserService userService;
- 
+
+ @Autowired
+ private PerfectMatchRepository perfectMatchRepository;
 
  
  @RequestMapping(value= {"/login"}, method=RequestMethod.GET)
@@ -172,6 +175,9 @@ public class UserController {
   
   List<User> allUsers = userService.findAllOrderedByNameDescending();
   model.addObject("allUsers", allUsers);
+  
+  List<PerfectMatch> matchedPairs = matchingService.findAll();
+  model.addObject("matchedErasmusMentorPairs", matchedPairs);
   
   model.setViewName("home/admin");
   return model;

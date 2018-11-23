@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.karolinawoloszyn.model.ErasmusInfo;
 import com.karolinawoloszyn.model.MentorInfo;
 import com.karolinawoloszyn.model.PerfectMatch;
+import com.karolinawoloszyn.model.User;
 import com.karolinawoloszyn.repository.PerfectMatchRepository;
 import com.karolinawoloszyn.service.ErasmusInfoService;
 import com.karolinawoloszyn.service.MatchingService;
@@ -177,5 +178,27 @@ public class PerfectMatchController {
 	  
 	  perfectMatchRepository.save(perfectMatch);
   }
- 
+  
+  
+/* @RequestMapping(value = {"/home/admin/assign_pairs"}, method = RequestMethod.POST)
+	public ModelAndView showPair() {
+	  
+	  //how single pair
+	  
+	  List<User> allUsers = userService.findAllOrderedByNameDescending()();
+	  
+	  Map<String, User> mapPair = allUsers.stream().
+			  collect(Collectors.toMap(User::getUserId, Function.identity()));
+	  
+	  List<PerfectMatch> perfectMatchs = matchingService.findAll();
+	  
+	  Map<String, MentorInfo> mentorInfoMap = perfectMatchs.stream().
+			  collect(Collectors.toMap(PerfectMatch::getId, Function.identity()));
+	  
+	  Set<ErasmusInfo> erasmusInfoWithPair = erasmusInfoMap.entrySet().stream().
+			  filter(e -> mentorInfoMap.containsKey(e.getKey())).
+			  map(e -> e.getValue()).collect(Collectors.toSet());
+	  
+	  erasmusInfoWithPair.stream().forEach(e -> savePairByCountry(e, mentorInfoMap));
+ */
 } 

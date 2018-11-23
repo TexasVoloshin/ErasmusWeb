@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.karolinawoloszyn.model.ErasmusInfo;
 import com.karolinawoloszyn.model.MentorInfo;
+import com.karolinawoloszyn.model.PerfectMatch;
 import com.karolinawoloszyn.model.User;
 
 public interface UserService {
@@ -19,6 +20,7 @@ public List<ErasmusInfo> findUnpairedErasmusStudents();
 
 public List<MentorInfo> findUnpairedMentors();
 
+public List<PerfectMatch> findAll();
 
 
 /*public List<User> findAllErasmusOrderedByNameDescending();

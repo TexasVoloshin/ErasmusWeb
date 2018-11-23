@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.karolinawoloszyn.model.ErasmusInfo;
 import com.karolinawoloszyn.model.MentorInfo;
+import com.karolinawoloszyn.model.PerfectMatch;
 import com.karolinawoloszyn.model.Role;
 import com.karolinawoloszyn.model.User;
 import com.karolinawoloszyn.repository.ErasmusInfoRepository;
@@ -81,6 +82,11 @@ public List<ErasmusInfo> findUnpairedErasmusStudents() {
 @Override
 public List<MentorInfo> findUnpairedMentors() {
 	return mentorInfoRepository.findAllUnpaired();
+}
+@Override
+public List<PerfectMatch> findAll() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 

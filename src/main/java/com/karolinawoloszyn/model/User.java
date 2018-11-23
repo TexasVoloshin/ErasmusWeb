@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @Table(name = "user")
 @NamedQuery(name = "User.findAllOrderedByNameDescending", 
 query = "SELECT u  FROM User u ORDER BY u.lastname DESC")
+
 public class User {
  
  @Id

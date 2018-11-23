@@ -135,11 +135,13 @@ xmlns:th="http://www.thymeleaf.org">
           <div>
 
        <!--   <a class="button .button2">Match Erasmuses and Mentors </a> -->
-        <a  class="button .button3" th:href="@{/notification}">Send email notification to Mentors and Erasmus students</a>
- 
+<!--         <a  class="button .button3" th:href="@{/notification}">Send email notification to Mentors and Erasmus students</a>
+ --> 
        <!--   <a class="button">Match Erasmuses and Mentors </a> -->
          <form method="POST" th:action="@{/home/admin/assign_pairs}" th:href="@{/home/admin/matching}">
     		<button type="submit" name="submit" value="value" class="button" >Assign pairs</button>
+    		        <a  class="button" th:href="@{/notification}" >Send email notification to Mentors and Erasmus students</a>
+    		
 		</form> 
          
          
